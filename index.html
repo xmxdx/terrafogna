@@ -22,14 +22,24 @@
     <style>
       html,
       body {
-        height: 100%;
+        /* height: 100%; */
         margin: 0;
+        box-sizing: border-box;
+      }
+      body {
         background: #fbd934;
         color: #da2846;
         font-family: 'Butterfly Kids', fantasy, cursive, sans-serif;
       }
       h1 {
         font-size: 3rem;
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+      }
+      .p-sm {
+        padding: 5px;
       }
       .flex-center {
         display: flex;
@@ -43,8 +53,9 @@
   </head>
 
   <body>
-    <div class="flex-center">
+    <header class="p-sm flex-center">
       <h1>TERRAFOGNA</h1>
-    </div>
+    </header>
+    <footer class="p-sm">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
   </body>
 </html>
