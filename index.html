@@ -61,7 +61,10 @@
         bottom: 0;
       }
       .p-sm {
-        padding: 5px;
+        padding: 10px;
+      }
+      .text-md {
+        font-size: 2rem;
       }
       .flex-center {
         display: flex;
@@ -71,13 +74,57 @@
       .flex-center > * {
         min-width: 0;
       }
+      .blink-children > * {
+        animation: blink-rnd step-start infinite;
+        animation-duration: var(--dur);
+        animation-delay: var(--dly);
+      }
+
+      @keyframes blink-rnd {
+        0%,
+        30%,
+        60%,
+        100% {
+          opacity: 0;
+        }
+        20%,
+        40%,
+        80% {
+          opacity: 1;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        .text-md {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
 
   <body>
     <header class="p-sm flex-center">
-      <h1>TERRAFOGNA</h1>
+      <h1 class="blink-children p-sm">
+        <span style="--dly: -0s; --dur: 7s">T</span>
+        <span style="--dly: -1s; --dur: 6s">E</span>
+        <span style="--dly: -2s; --dur: 5s">R</span>
+        <span style="--dly: -3s; --dur: 8s">R</span>
+        <span style="--dly: -4s; --dur: 9s">A</span>
+        <span style="--dly: -5s; --dur: 4s">F</span>
+        <span style="--dly: -6s; --dur: 3s">O</span>
+        <span style="--dly: -7s; --dur: 10s">G</span>
+        <span style="--dly: -8s; --dur: 4s">N</span>
+        <span style="--dly: -9s; --dur: 7s">A</span>
+      </h1>
     </header>
+    <main>
+      <div class="flex-center">
+        <p class="p-sm text-md">Stiamo ancora sguazzando nei liquami ma ti assicuro che tra non molto usciremo dai tuoi tombini 🐀🕳️</p>
+      </div>
+    </main>
     <footer class="p-sm">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
   </body>
 </html>
