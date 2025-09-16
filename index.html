@@ -50,18 +50,33 @@
       }
       body {
         background: #fbd934;
+        background: #fcf324;
         color: #da2846;
+        color: #fd82ca;
         font-family: 'Butterfly Kids', fantasy, cursive, sans-serif;
+      }
+      img,
+      iframe {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border: none;
       }
       h1 {
         font-size: 3rem;
       }
       footer {
-        position: absolute;
+        position: sticky;
         bottom: 0;
       }
-      .p-sm {
-        padding: 10px;
+      .p-md {
+        padding: 24px;
+      }
+      .px-md {
+        padding: 0 24px;
+      }
+      .pb-md {
+        padding-bottom: 24px;
       }
       .text-md {
         font-size: 2rem;
@@ -73,6 +88,13 @@
       }
       .flex-center > * {
         min-width: 0;
+      }
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .blink-children > * {
         animation: blink-rnd step-start infinite;
@@ -98,33 +120,101 @@
         h1 {
           font-size: 2.5rem;
         }
+        .p-md {
+          padding: 12px;
+        }
+        .px-md {
+          padding: 0 12px;
+        }
+        .pb-md {
+          padding-bottom: 12px;
+        }
+        .grid {
+          gap: 12px;
+        }
         .text-md {
           font-size: 1.5rem;
         }
       }
     </style>
+    <script src="https://unpkg.com/@appnest/masonry-layout/umd/masonry-layout.min.js"></script>
   </head>
-
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0837a29ad012d73a25cef1a9/script.js"></script>
   <body>
-    <header class="p-sm flex-center">
-      <h1 class="blink-children p-sm">
-        <span style="--dly: -0s; --dur: 7s">T</span>
-        <span style="--dly: -1s; --dur: 6s">E</span>
-        <span style="--dly: -2s; --dur: 5s">R</span>
-        <span style="--dly: -3s; --dur: 8s">R</span>
-        <span style="--dly: -4s; --dur: 9s">A</span>
-        <span style="--dly: -5s; --dur: 4s">F</span>
-        <span style="--dly: -6s; --dur: 3s">O</span>
-        <span style="--dly: -7s; --dur: 10s">G</span>
-        <span style="--dly: -8s; --dur: 4s">N</span>
-        <span style="--dly: -9s; --dur: 7s">A</span>
+    <header class="flex-center">
+      <h1 class="blink-children p-md">
+        <span style="--dly: -5.2s; --dur: 9.9s">T</span>
+        <span style="--dly: -3.3s; --dur: 6.5s">E</span>
+        <span style="--dly: -1.3s; --dur: 5.7s">R</span>
+        <span style="--dly: -9.4s; --dur: 6.1s">R</span>
+        <span style="--dly: -7.5s; --dur: 5.6s">A</span>
+        <span style="--dly: -1.7s; --dur: 5.9s">F</span>
+        <span style="--dly: -9.6s; --dur: 6.6s">O</span>
+        <span style="--dly: -3.8s; --dur: 7.1s">G</span>
+        <span style="--dly: -9.2s; --dur: 5.4s">N</span>
+        <span style="--dly: -5.9s; --dur: 6.7s">A</span>
       </h1>
     </header>
     <main>
-      <div class="flex-center">
-        <p class="p-sm text-md">Stiamo ancora sguazzando nei liquami ma ti assicuro che tra non molto usciremo dai tuoi tombini 🐀🕳️</p>
+      <masonry-layout class="px-md">
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-10-21-32-50_xjhu0c.jpg" alt="locanda terrafogna" width="900" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/Terrafogna-01_gre7py.jpg" alt="locanda terrafogna" width="1335" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-13-13-05-22_w7ubu9.jpg" alt="cargo" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-12-20-47-44_urb8tt.jpg" alt="dixies" width="1152" height="2048" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-12-18-41-05_iqsvnw.jpg" alt="locanda" width="1536" height="2048" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-09-18-07-49_icese7.jpg" alt="salone" width="828" height="1069" loading="lazy" />
+      </masonry-layout>
+      <div class="flex-center px-md pb-md">
+        <div class="grid">
+          <iframe src="https://suno.com/embed/23319230-a575-4edf-abe5-7954e06bd8aa" width="760" height="240"><a href="https://suno.com/song/23319230-a575-4edf-abe5-7954e06bd8aa">Inno country del TERRAFOGNA senti qua 🤠</a></iframe>
+          <iframe src="https://suno.com/embed/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283" width="760" height="240"><a href="https://suno.com/song/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283">Inno pop del TERRAFOGNA senti qui 🍿</a></iframe>
+        </div>
       </div>
+      <masonry-layout class="px-md">
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/kawaii_cute_pitbull_aesthetic_pink_dale_tih3p9.jpg" alt="kawaii" width="736" height="736" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868719/Screenshot_2025-09-13_alle_15.12.12_ggsjls.jpg" alt="" width="1284" height="1146" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868719/vibing_in_this_economy_dyqlf0.jpg" alt="" width="473" height="472" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868715/Screenshot_2025-09-13_alle_15.11.36_brh5oi.jpg" alt="" width="838" height="1232" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Screenshot_2025-09-13_alle_15.08.33_iiejby.jpg" alt="" width="506" height="634" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Screenshot_2025-06-06_alle_18.07.35_vo3wla.jpg" alt="" width="1158" height="650" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/piccione_mzaoym.jpg" alt="" width="736" height="723" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Pet_Halloween_costume_y4gbsc.jpg" alt="" width="720" height="711" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868713/orso_sovrastimolato_ej3go8.jpg" alt="" width="736" height="771" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868710/noi_rfzxpb.jpg" alt="" width="736" height="728" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868710/microplastic_in_my_brain_ftfqbw.jpg" alt="" width="736" height="645" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868709/fcf5340668af7b4dcc51e68d28b06239_lf5isn.jpg" alt="" width="710" height="552" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868708/folletti_rossi_fxseyw.jpg" alt="" width="736" height="1006" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868706/ed82586af48bc5435c729dc39876f353_acwxis.jpg" alt="" width="1000" height="1500" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868706/f0cbd97074606a055fffe3f6d8c2262f_kbjzlf.jpg" alt="" width="538" height="605" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868705/e90792e983f1c832c7a472e254d05514_ap6ndy.jpg" alt="" width="1080" height="1080" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e9eb4d6e7027dee42481ad27f7be3ed7_k2ezcr.jpg" alt="" width="625" height="990" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e44fb53649ec53c0d4122ef3e816b837_cwywfn.jpg" alt="" width="320" height="226" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868703/delfini_gaslighting_rvlxf4.jpg" alt="" width="736" height="724" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868702/cea64f8329c519658b6731c2a7532901_v0jrjb.jpg" alt="" width="455" height="700" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868701/cavallo_wow_u9wnyt.jpg" alt="" width="717" height="714" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c602f91aacddea4ce2fd9086b442619a_ojetco.jpg" alt="" width="470" height="775" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c55fe1bc1ec5242f610a90b9bf69bec8_yaiqt7.jpg" alt="" width="640" height="480" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868699/a47123788151fff552382795a78ff552_gteyhv.jpg" alt="" width="540" height="540" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868698/6914198a271b8eeb20128837dda3e3d9_ca2tph.jpg" alt="" width="736" height="736" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/62db02d66524ff26c2dc6c31571f3d55_e3scg6.jpg" alt="" width="414" height="414" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/320ec9d2e115cdeae204015d2e704dcd_laeq8a.jpg" alt="" width="554" height="550" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/88476cf39b31d6689c46114315c6deff_tl6sdy.jpg" alt="" width="400" height="533" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868696/799ffd2d0cca4602d556e4ac0dd3f554_mq5wfb.jpg" alt="" width="333" height="251" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868696/799ed313bcc71e5dc2b5fa064d2cf224_tnvewp.jpg" alt="" width="200" height="198" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868694/52ec4c399c376ce873fef34c0100c16f_rrp83g.jpg" alt="" width="728" height="727" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/037b5a8900e6fb9c875626a1e511421a_npqsfg.jpg" alt="" width="1200" height="1394" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/45ec99f609dafa08cc7c1cfc0d7272f9_oemltl.jpg" alt="" width="700" height="933" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/41d50f14b4028f72811f3e73b0e68e8a_antqie.jpg" alt="" width="828" height="653" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/8b238e8487954fc0dc2ee1df28a9642b_nchsks.jpg" alt="" width="736" height="882" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/16d6439080b84effdce9327e0ca485c1_qww8sd.jpg" alt="" width="500" height="667" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/1cadb67dae9615ba46309ca7a1e12925_i9w9du.jpg" alt="" width="1200" height="1800" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9b2f416bb6f57a5b87a9d42bd3e9c6dc_xonam5.jpg" alt="" width="400" height="520" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/4c3fac6b2caaed277043bdc0c3a8d899_luhyyl.jpg" alt="" width="460" height="622" loading="lazy" />
+      </masonry-layout>
+      <div class="grid grid-2"></div>
     </main>
-    <footer class="p-sm">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
+    <footer class="px-md pb-md">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
   </body>
 </html>
