@@ -101,21 +101,29 @@
         animation-duration: var(--dur);
         animation-delay: var(--dly);
       }
+      ig-reel,
       .ig-reel {
         aspect-ratio: 4 / 5;
         overflow: hidden;
       }
       iframe.instagram-media {
+        position: static !important;
         margin: -54px 0 0 !important;
-        border: none !important;
+        border: 0 !important;
         border-radius: 0 !important;
         min-width: 0 !important;
-        max-width: none !important;
+        max-width: 100% !important;
         width: 100% !important;
         height: calc(100% + 53px);
       }
       blockquote.instagram-media {
-        margin: 0 0 24px !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-shadow: none !important;
       }
 
       @keyframes blink-rnd {
@@ -179,54 +187,6 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-12-20-47-44_urb8tt.jpg" alt="dixies" width="1152" height="2048" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-12-18-41-05_iqsvnw.jpg" alt="locanda" width="1536" height="2048" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-09-18-07-49_icese7.jpg" alt="salone" width="828" height="1069" loading="lazy" />
-        <div class="ig-reel">
-          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DNlu9yPOWxM/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 1px; max-width: 540px; min-width: 326px; padding: 0; width: 99.375%; width: -webkit-calc(100% - 2px); width: calc(100% - 2px)">
-            <div style="padding: 16px">
-              <a href="https://www.instagram.com/reel/DNlu9yPOWxM/?utm_source=ig_embed&amp;utm_campaign=loading" style="background: #ffffff; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%" target="_blank">
-                <div style="display: flex; flex-direction: row; align-items: center">
-                  <div style="background-color: #f4f4f4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px"></div>
-                  <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center">
-                    <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px"></div>
-                    <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px"></div>
-                  </div>
-                </div>
-                <div style="padding: 19% 0"></div>
-                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px">
-                  <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                        <g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <div style="padding-top: 8px"><div style="color: #3897f0; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px">View this post on Instagram</div></div>
-                <div style="padding: 12.5% 0"></div>
-                <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center">
-                  <div>
-                    <div style="background-color: #f4f4f4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px)"></div>
-                    <div style="background-color: #f4f4f4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px"></div>
-                    <div style="background-color: #f4f4f4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px)"></div>
-                  </div>
-                  <div style="margin-left: 8px">
-                    <div style="background-color: #f4f4f4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px"></div>
-                    <div style="width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div>
-                  </div>
-                  <div style="margin-left: auto">
-                    <div style="width: 0px; border-top: 8px solid #f4f4f4; border-right: 8px solid transparent; transform: translateY(16px)"></div>
-                    <div style="background-color: #f4f4f4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px)"></div>
-                    <div style="width: 0; height: 0; border-top: 8px solid #f4f4f4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px)"></div>
-                  </div>
-                </div>
-                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px">
-                  <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px"></div>
-                  <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px"></div></div
-              ></a>
-              <p style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; text-overflow: ellipsis; white-space: nowrap"><a href="https://www.instagram.com/reel/DNlu9yPOWxM/?utm_source=ig_embed&amp;utm_campaign=loading" style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none" target="_blank">A post shared by @garbagetruckau</a></p>
-            </div>
-          </blockquote>
-        </div>
-        <script async src="//www.instagram.com/embed.js"></script>
       </masonry-layout>
       <div class="flex-center px-md pb-md">
         <div class="grid">
@@ -238,25 +198,31 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/kawaii_cute_pitbull_aesthetic_pink_dale_tih3p9.jpg" alt="kawaii" width="736" height="736" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868719/Screenshot_2025-09-13_alle_15.12.12_ggsjls.jpg" alt="" width="1284" height="1146" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868719/vibing_in_this_economy_dyqlf0.jpg" alt="" width="473" height="472" loading="lazy" />
+        <ig-reel ig-id="DNlu9yPOWxM"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868715/Screenshot_2025-09-13_alle_15.11.36_brh5oi.jpg" alt="" width="838" height="1232" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Screenshot_2025-09-13_alle_15.08.33_iiejby.jpg" alt="" width="506" height="634" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Screenshot_2025-06-06_alle_18.07.35_vo3wla.jpg" alt="" width="1158" height="650" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/piccione_mzaoym.jpg" alt="" width="736" height="723" loading="lazy" />
+        <ig-reel ig-id="DNK57_OslIu"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868714/Pet_Halloween_costume_y4gbsc.jpg" alt="" width="720" height="711" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868713/orso_sovrastimolato_ej3go8.jpg" alt="" width="736" height="771" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868710/noi_rfzxpb.jpg" alt="" width="736" height="728" loading="lazy" />
+        <ig-reel ig-id="DNNftkGMa8_"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868710/microplastic_in_my_brain_ftfqbw.jpg" alt="" width="736" height="645" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868709/fcf5340668af7b4dcc51e68d28b06239_lf5isn.jpg" alt="" width="710" height="552" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868708/folletti_rossi_fxseyw.jpg" alt="" width="736" height="1006" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868706/ed82586af48bc5435c729dc39876f353_acwxis.jpg" alt="" width="1000" height="1500" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868706/f0cbd97074606a055fffe3f6d8c2262f_kbjzlf.jpg" alt="" width="538" height="605" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868705/e90792e983f1c832c7a472e254d05514_ap6ndy.jpg" alt="" width="1080" height="1080" loading="lazy" />
+        <ig-reel ig-id="DK-nrVOT4Bc"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e9eb4d6e7027dee42481ad27f7be3ed7_k2ezcr.jpg" alt="" width="625" height="990" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e44fb53649ec53c0d4122ef3e816b837_cwywfn.jpg" alt="" width="320" height="226" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868703/delfini_gaslighting_rvlxf4.jpg" alt="" width="736" height="724" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868702/cea64f8329c519658b6731c2a7532901_v0jrjb.jpg" alt="" width="455" height="700" loading="lazy" />
+        <ig-reel ig-id="DKegbtxt9EG"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868701/cavallo_wow_u9wnyt.jpg" alt="" width="717" height="714" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c602f91aacddea4ce2fd9086b442619a_ojetco.jpg" alt="" width="470" height="775" loading="lazy" />
+        <ig-reel ig-id="DJ2A3jNN2aL"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c55fe1bc1ec5242f610a90b9bf69bec8_yaiqt7.jpg" alt="" width="640" height="480" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868699/a47123788151fff552382795a78ff552_gteyhv.jpg" alt="" width="540" height="540" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868698/6914198a271b8eeb20128837dda3e3d9_ca2tph.jpg" alt="" width="736" height="736" loading="lazy" />
@@ -280,5 +246,105 @@
       <div class="grid grid-2"></div>
     </main>
     <footer class="px-md pb-md">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
+    <script>
+      class IgReel extends HTMLElement {
+        constructor() {
+          super();
+        }
+
+        static get observedAttributes() {
+          return ['ig-id'];
+        }
+
+        connectedCallback() {
+          this.render();
+          this.loadInstagramScript();
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+          if (oldValue !== newValue) {
+            this.render();
+          }
+        }
+
+        render() {
+          const igId = this.getAttribute('ig-id');
+
+          if (!igId) {
+            this.innerHTML = '<div style="color: red; padding: 10px;">No video id</div>';
+            return;
+          }
+
+          this.innerHTML = `
+<div class="ig-reel">
+  <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/${igId}/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 1px; max-width: 540px; min-width: 326px; padding: 0; width: 99.375%; width: -webkit-calc(100% - 2px); width: calc(100% - 2px)">
+    <div style="padding: 16px">
+      <a href="https://www.instagram.com/reel/${igId}/?utm_source=ig_embed&amp;utm_campaign=loading" style="background: #ffffff; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%" target="_blank">
+        <div style="display: flex; flex-direction: row; align-items: center">
+          <div style="background-color: #f4f4f4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px"></div>
+          <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center">
+            <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px"></div>
+            <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px"></div>
+          </div>
+        </div>
+        <div style="padding: 19% 0"></div>
+        <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px">
+          <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                <g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div style="padding-top: 8px"><div style="color: #3897f0; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px">View this post on Instagram</div></div>
+        <div style="padding: 12.5% 0"></div>
+        <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center">
+          <div>
+            <div style="background-color: #f4f4f4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px)"></div>
+            <div style="background-color: #f4f4f4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px"></div>
+            <div style="background-color: #f4f4f4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px)"></div>
+          </div>
+          <div style="margin-left: 8px">
+            <div style="background-color: #f4f4f4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px"></div>
+            <div style="width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div>
+          </div>
+          <div style="margin-left: auto">
+            <div style="width: 0px; border-top: 8px solid #f4f4f4; border-right: 8px solid transparent; transform: translateY(16px)"></div>
+            <div style="background-color: #f4f4f4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px)"></div>
+            <div style="width: 0; height: 0; border-top: 8px solid #f4f4f4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px)"></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px">
+          <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px"></div>
+          <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px"></div></div
+      ></a>
+      <p style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; text-overflow: ellipsis; white-space: nowrap"><a href="https://www.instagram.com/reel/${igId}/?utm_source=ig_embed&amp;utm_campaign=loading" style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none" target="_blank">A post shared by this instagram account</a></p>
+    </div>
+  </blockquote>
+</div>
+                `;
+
+          setTimeout(() => {
+            if (window.instgrm && window.instgrm.Embeds) {
+              window.instgrm.Embeds.process();
+            }
+          }, 100);
+        }
+
+        loadInstagramScript() {
+          if (window.instgrm || document.querySelector('script[src*="instagram.com/embed.js"]')) {
+            return;
+          }
+
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = '//www.instagram.com/embed.js';
+          document.head.appendChild(script);
+        }
+      }
+
+      customElements.define('ig-reel', IgReel);
+    </script>
   </body>
 </html>
