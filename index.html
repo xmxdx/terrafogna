@@ -24,17 +24,29 @@
     <meta name="twitter:description" content="Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa" />
     <meta name="twitter:image" content="https://terrafogna.top/favicon/web-app-manifest-512x512.png" />
 
-    <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/fontsource/fonts/butterfly-kids@latest/latin-400-normal.woff2" crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/fontsource/fonts/butterfly-kids@latest/latin-400-normal.woff" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff" href="https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff" href="https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff" crossorigin="anonymous" />
 
     <style>
-      /* butterfly-kids-latin-400-normal */
+      /* comic-relief-latin-400-normal */
       @font-face {
-        font-family: 'Butterfly Kids';
+        font-family: 'Comic Relief';
         font-style: normal;
         font-display: block;
         font-weight: 400;
-        src: url(https://cdn.jsdelivr.net/fontsource/fonts/butterfly-kids@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/butterfly-kids@latest/latin-400-normal.woff) format('woff');
+        src: url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* comic-relief-latin-700-normal */
+      @font-face {
+        font-family: 'Comic Relief';
+        font-style: normal;
+        font-display: block;
+        font-weight: 700;
+        src: url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff) format('woff');
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
     </style>
@@ -50,7 +62,7 @@
         background: #fcf324;
         color: #da2846;
         color: #fd82ca;
-        font-family: 'Butterfly Kids', fantasy, cursive, sans-serif;
+        font-family: 'Comic Relief', fantasy, cursive, sans-serif;
       }
       img,
       iframe {
@@ -60,23 +72,42 @@
         border: none;
       }
       h1 {
-        font-size: 3rem;
+        font-size: 5vw;
       }
       footer {
         position: sticky;
         bottom: 0;
+        pointer-events: none;
+      }
+      .hidden {
+        display: none;
       }
       .p-md {
         padding: 24px;
       }
       .px-md {
-        padding: 0 24px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
       .pb-md {
         padding-bottom: 24px;
       }
+      .py-lg {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .text-bold {
+        font-weight: 700;
+      }
       .text-md {
         font-size: 2rem;
+      }
+      .text-fogna {
+        font-size: 56px;
+      }
+      .text-extrafogna {
+        font-size: 72px;
+        text-align: center;
       }
       .flex-center {
         display: flex;
@@ -97,6 +128,39 @@
         animation: blink-rnd step-start infinite;
         animation-duration: var(--dur);
         animation-delay: var(--dly);
+      }
+      .quoterrafogna {
+        position: absolute;
+        pointer-events: none;
+        width: 80%;
+        transform: translate(20%, 200px);
+        text-shadow: 5px 0px 10px #00ff21;
+        word-break: break-word;
+        mix-blend-mode: difference;
+        animation: swag-rnd ease-in-out infinite;
+        animation-duration: 50s;
+        animation-delay: 0s;
+      }
+      .quiz button {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        text-align: center;
+        background: none;
+        box-shadow: none;
+        padding: 0 1rem;
+        cursor: pointer;
+        border: 3px solid currentColor;
+        color: inherit;
+        font: inherit;
+        word-break: break-word;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .quiz button:disabled {
+        cursor: wait;
+        opacity: 0.6;
       }
       ig-reel,
       .ig-reel {
@@ -121,6 +185,9 @@
         max-width: 100% !important;
         width: 100% !important;
         box-shadow: none !important;
+      }
+      iframe[src*='www.youtube'] {
+        aspect-ratio: 16 / 9;
       }
 
       @keyframes blink-rnd {
@@ -151,24 +218,63 @@
         }
       }
 
+      @keyframes swag-rnd {
+        0%,
+        16%,
+        23%,
+        31%,
+        37%,
+        46%,
+        58%,
+        64%,
+        79%,
+        93%,
+        100% {
+          text-shadow: 5px 0px 10px #00ff85;
+        }
+        8%,
+        21%,
+        25%,
+        35%,
+        43%,
+        52%,
+        60%,
+        72%,
+        89%,
+        95% {
+          text-shadow: 5px 0px 10px #b0ff00;
+        }
+      }
+
       @media screen and (max-width: 480px) {
         h1 {
-          font-size: 2.5rem;
+          font-size: 7vw;
         }
         .p-md {
           padding: 12px;
         }
         .px-md {
-          padding: 0 12px;
+          padding-left: 12px;
+          padding-right: 12px;
         }
         .pb-md {
           padding-bottom: 12px;
+        }
+        .py-lg {
+          padding-top: 24px;
+          padding-bottom: 24px;
         }
         .grid {
           gap: 12px;
         }
         .text-md {
           font-size: 1.5rem;
+        }
+        .text-fogna {
+          font-size: 48px;
+        }
+        .text-extrafogna {
+          font-size: 64px;
         }
       }
     </style>
@@ -177,7 +283,7 @@
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0837a29ad012d73a25cef1a9/script.js"></script>
   <body>
     <header class="flex-center">
-      <h1 class="blink-children p-md">
+      <h1 class="blink-children p-md hidden">
         <span style="--dly: -5.2s; --dur: 19.9s">T</span>
         <span style="--dly: -3.3s; --dur: 16.5s">E</span>
         <span style="--dly: -6.3s; --dur: 15.7s">R</span>
@@ -189,11 +295,13 @@
         <span style="--dly: -9.2s; --dur: 15.4s">N</span>
         <span style="--dly: -5.9s; --dur: 16.7s">A</span>
       </h1>
+      <img class="p-md" src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758238290/TERRAFOGNA_1200_lf8wnp.png" alt="header terrafogna" width="1200" height="211" />
     </header>
     <main>
       <masonry-layout class="px-md">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-10-21-32-50_xjhu0c.jpg" alt="locanda terrafogna" width="900" height="1600" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/Terrafogna-01_gre7py.jpg" alt="locanda terrafogna" width="1335" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758148378/IMG_0140_kwn5ow.jpg" alt="locanda terrafogna" width="1080" height="1528" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-13-13-05-22_w7ubu9.jpg" alt="cargo" width="1200" height="1600" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-12-20-47-44_urb8tt.jpg" alt="dixies" width="1152" height="2048" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-12-18-41-05_iqsvnw.jpg" alt="locanda" width="1536" height="2048" loading="lazy" />
@@ -204,6 +312,9 @@
           <iframe src="https://suno.com/embed/23319230-a575-4edf-abe5-7954e06bd8aa" width="760" height="240"><a href="https://suno.com/song/23319230-a575-4edf-abe5-7954e06bd8aa">Inno country del TERRAFOGNA senti qua 🤠</a></iframe>
           <iframe src="https://suno.com/embed/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283" width="760" height="240"><a href="https://suno.com/song/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283">Inno pop del TERRAFOGNA senti qui 🍿</a></iframe>
         </div>
+      </div>
+      <div class="quoterrafogna text-fogna text-bold">
+        <p>L’albero azzurro è in decomposizione, il fantabosco è sempre stato lí, dove giace il cimitero dei rifiuti tossici della Bovisa, solo che ancora non ne eravamo a conoscenza. La pressione dell’aria sale e la qualità precipita, il Seveso è perennemente in piena, oltre la soglia di allerta, come i nostri umori. Un mondo tuttosotto e sottosopra, uno festa mutante selvatica, esalazioni che covano. nelle viscere di una palude e si dirigono verso la città…</p>
       </div>
       <masonry-layout class="px-md">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/kawaii_cute_pitbull_aesthetic_pink_dale_tih3p9.jpg" alt="kawaii" width="736" height="736" loading="lazy" />
@@ -229,31 +340,107 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e9eb4d6e7027dee42481ad27f7be3ed7_k2ezcr.jpg" alt="" width="625" height="990" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e44fb53649ec53c0d4122ef3e816b837_cwywfn.jpg" alt="" width="320" height="226" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868703/delfini_gaslighting_rvlxf4.jpg" alt="" width="736" height="724" loading="lazy" />
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fBiuZnAY590?si=kGE2jXeqAxy5wqhQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </masonry-layout>
+      <div class="flex-center px-md py-lg">
+        <div class="quiz grid pb-md text-fogna text-bold">
+          <div class="pb-md text-extrafogna text-bold">SQUIZZZ</div>
+          <button class="play-btn" type="button" disabled>premi</button>
+          <button class="ans-btn" data-ans="0" type="button" disabled>uno</button>
+          <button class="ans-btn" data-ans="1" type="button" disabled>due</button>
+          <button class="ans-btn" data-ans="2" type="button" disabled>tre</button>
+          <button class="ans-btn" data-ans="3" type="button" disabled>quatro</button>
+        </div>
+      </div>
+      <div class="quoterrafogna text-fogna text-bold">
+        <p>Se hai assunto regolarmente le generose razioni di inedia che offre la città in cui sopravvivi, se le acque nere che tracimano dalle condutture della pubblica morale hanno incidentalmente battezzato il tuo capo può capitarti di attraversare una metamoforsi dolorosa: c’è chi si trasforma in un supereroe, chi in un supererrore. E se occupassimo quella sottile differenza? Nuovi ed ultimi fedeli alla linea locale ma fuori posto in città</p>
+      </div>
+      <masonry-layout class="px-md">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868702/cea64f8329c519658b6731c2a7532901_v0jrjb.jpg" alt="" width="455" height="700" loading="lazy" />
         <ig-reel ig-id="DKegbtxt9EG"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868701/cavallo_wow_u9wnyt.jpg" alt="" width="717" height="714" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c602f91aacddea4ce2fd9086b442619a_ojetco.jpg" alt="" width="470" height="775" loading="lazy" />
-        <ig-reel ig-id="DJ2A3jNN2aL"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868700/c55fe1bc1ec5242f610a90b9bf69bec8_yaiqt7.jpg" alt="" width="640" height="480" loading="lazy" />
+        <ig-reel ig-id="DJ2A3jNN2aL"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868699/a47123788151fff552382795a78ff552_gteyhv.jpg" alt="" width="540" height="540" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868698/6914198a271b8eeb20128837dda3e3d9_ca2tph.jpg" alt="" width="736" height="736" loading="lazy" />
+        <ig-reel ig-id="DEVHQ1mAQf2"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/62db02d66524ff26c2dc6c31571f3d55_e3scg6.jpg" alt="" width="414" height="414" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/320ec9d2e115cdeae204015d2e704dcd_laeq8a.jpg" alt="" width="554" height="550" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868697/88476cf39b31d6689c46114315c6deff_tl6sdy.jpg" alt="" width="400" height="533" loading="lazy" />
+        <ig-reel ig-id="DKjKFn8ov0L"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868696/799ffd2d0cca4602d556e4ac0dd3f554_mq5wfb.jpg" alt="" width="333" height="251" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868696/799ed313bcc71e5dc2b5fa064d2cf224_tnvewp.jpg" alt="" width="200" height="198" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868694/52ec4c399c376ce873fef34c0100c16f_rrp83g.jpg" alt="" width="728" height="727" loading="lazy" />
+        <ig-reel ig-id="DIy0uW-gtRg"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/037b5a8900e6fb9c875626a1e511421a_npqsfg.jpg" alt="" width="1200" height="1394" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/45ec99f609dafa08cc7c1cfc0d7272f9_oemltl.jpg" alt="" width="700" height="933" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/41d50f14b4028f72811f3e73b0e68e8a_antqie.jpg" alt="" width="828" height="653" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/8b238e8487954fc0dc2ee1df28a9642b_nchsks.jpg" alt="" width="736" height="882" loading="lazy" />
+        <ig-reel ig-id="DJBkfiTApDv"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868693/16d6439080b84effdce9327e0ca485c1_qww8sd.jpg" alt="" width="500" height="667" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/1cadb67dae9615ba46309ca7a1e12925_i9w9du.jpg" alt="" width="1200" height="1800" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9b2f416bb6f57a5b87a9d42bd3e9c6dc_xonam5.jpg" alt="" width="400" height="520" loading="lazy" />
+        <ig-reel ig-id="DI9goVqgoR5"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/4c3fac6b2caaed277043bdc0c3a8d899_luhyyl.jpg" alt="" width="460" height="622" loading="lazy" />
+        <ig-reel ig-id="DD9LzDxgL5m"></ig-reel>
       </masonry-layout>
+      <div class="quoterrafogna text-fogna text-bold">
+        <p>
+          <b>Albinismo e mutazione</b><br />
+          Altre versioni suggeriscono che i coccodrilli, nelle fogne, vivendo in completa assenza di luce solare, si sarebbero abituati ed adattati a queste condizioni, modificando le squame e diventando ciechi e albini; gli occhi sarebbero divenuti rossi.[7] Il supposto albinismo comporterebbe un disagio per i coccodrilli, che non potrebbero recarsi al di fuori delle fogne poiché, come tutti gli animali albini, sarebbero molto vulnerabili ai danni causati dalla luce solare, soprattutto i piccoli. Coloro che credono a questa leggenda affermano invece che i presunti coccodrilli albini non uscirebbero mai dalle fogne proprio perché consci delle loro caratteristiche. Non ci sono mai stati, tuttavia, avvistamenti di coccodrilli albini a New York.[8]
+        </p>
+      </div>
+      <masonry-layout class="px-md">
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/4c3fac6b2caaed277043bdc0c3a8d899_luhyyl.jpg" alt="" width="460" height="622" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-09-05-10-10-01_oupb3q.jpg" alt="" width="1600" height="1200" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-08-20-11-49-06_xtk3vt.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <ig-reel ig-id="DJGh4izJvxJ"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-09-05-10-27-31_tz5dup.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-08-29-11-56-18_j2bkgv.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-09-03-12-16-27_dpmbcm.jpg" alt="" width="1152" height="2048" loading="lazy" />
+        <ig-reel ig-id="DKXItfASh32"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156093/PHOTO-2025-09-05-10-41-12_addedi.jpg" alt="" width="1600" height="1200" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-05-10-41-13_3_t0mofq.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <ig-reel ig-id="DL71OmHo2EW"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-05-10-08-33_jdqawz.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-11-14-11-06_xwtuyb.jpg" alt="" width="550" height="745" loading="lazy" />
+        <ig-reel ig-id="DKUTubltWkv"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-05-10-41-13_nzpxxi.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-11-09-15-10_jvxmwy.jpg" alt="" width="1600" height="1200" loading="lazy" />
+        <ig-reel ig-id="DLz4fkKNjlp"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-13-14-25-49_wb3zec.jpg" alt="" width="814" height="1096" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-05-10-41-14_tbgw0j.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <ig-reel ig-id="DL-EQH2uBbM"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156095/PHOTO-2025-09-13-14-25-59_el2umw.jpg" alt="" width="316" height="304" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156095/PHOTO-2025-09-13-20-28-31_mc63d0.jpg" alt="" width="1449" height="2047" loading="lazy" />
+        <ig-reel ig-id="DLeilhJNR-7"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156094/PHOTO-2025-09-05-10-41-13_4_v5ptjp.jpg" alt="" width="1200" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-15-00-05-53_w71gyo.jpg" alt="" width="2000" height="1175" loading="lazy" />
+        <ig-reel ig-id="DLpuxmeNeUE"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-16-17-23-37_aw9ug7.jpg" alt="" width="1080" height="1363" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-17-21-41-08_dqwklg.jpg" alt="" width="620" height="569" loading="lazy" />
+        <ig-reel ig-id="DLupOlQIbst"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-14-19-03-58_rylbfm.jpg" alt="" width="1152" height="2048" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-15-00-06-12_fttzsl.jpg" alt="" width="1920" height="1080" loading="lazy" />
+        <ig-reel ig-id="DLqbmSiRRCB"></ig-reel>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156102/PHOTO-2025-09-15-19-46-32_oyl6wu.jpg" alt="" width="1536" height="2048" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758156103/PHOTO-2025-09-17-21-41-24_wgjur2.jpg" alt="" width="356" height="360" loading="lazy" />
+        <ig-reel ig-id="DMxsX2YugZ9"></ig-reel>
+        <ig-reel ig-id="DLnhZtGImjq"></ig-reel>
+        <ig-reel ig-id="DMs1I4DoA0y"></ig-reel>
+        <ig-reel ig-id="DN0p-Ai3tsw"></ig-reel>
+        <ig-reel ig-id="DM5jD51OPvb"></ig-reel>
+        <ig-reel ig-id="DM7qyaGxDmj"></ig-reel>
+        <ig-reel ig-id="DF0F_kzNRmu"></ig-reel>
+        <ig-reel ig-id="DJHTZkpIQ2c"></ig-reel>
+        <ig-reel ig-id="C9p5RvZuRvN"></ig-reel>
+        <ig-reel ig-id="C5f5DhHp-ot"></ig-reel>
+      </masonry-layout>
+      <div class="quoterrafogna text-fogna text-bold">
+        <p>Per fognatura (più formalmente sistema di drenaggio urbano o volgarmente chiavica) si intende il complesso di canalizzazioni, generalmente sotterranee, per raccogliere e smaltire lontano da insediamenti civili e/o produttivi le acque superficiali (meteoriche, di lavaggio, ecc.) e quelle reflue provenienti dalle attività umane in generale. Le canalizzazioni, in generale, funzionano a pelo libero.</p>
+      </div>
       <div class="grid grid-2"></div>
     </main>
     <footer class="px-md pb-md">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
@@ -334,7 +521,7 @@
     </div>
   </blockquote>
 </div>
-                `;
+`;
 
           setTimeout(() => {
             if (window.instgrm && window.instgrm.Embeds) {
@@ -350,12 +537,200 @@
 
           const script = document.createElement('script');
           script.async = true;
-          script.src = '//www.instagram.com/embed.js';
+          script.src = 'https://www.instagram.com/embed.js';
           document.head.appendChild(script);
         }
       }
 
       customElements.define('ig-reel', IgReel);
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let attempts = 5,
+          counter = 0,
+          synth,
+          playBtn,
+          ansBtns,
+          ioana;
+        const qa = [
+          {
+            q: 'come si chiama in realtà totò',
+            o: ['enzo jacchetti', 'antonio de curtis', 'pimpo baudo', 'renato puzzetta'],
+            a: 1,
+          },
+          {
+            q: 'quale fiume di milano è tristemente noto per esondare ciclicamente',
+            o: ['lambro', 'ticino', 'seveso', 'adda'],
+            a: 2,
+          },
+          {
+            q: 'lalbero azzurro, famoso programma tv per bambini, aveva come mascot un pupazzo blu. come si chiamava',
+            o: ['dodò', 'totò', 'ninnò', 'gigi'],
+            a: 0,
+          },
+          {
+            q: 'quale quartiere di milano viene citato come cimitero dei rifiuti tossici',
+            o: ['brera', 'isola', 'bovisa', 'ortica'],
+            a: 2,
+          },
+          {
+            q: 'nel manifesto di terrafogna si parla di una festa mutante selvatica. quale animale rappresenta meglio questa idea',
+            o: ['rana fluorescente', 'cinghiale psichedelico', 'cavallo in decomposizione', 'riccio radioattivo'],
+            a: 3,
+          },
+          {
+            q: 'qual è lelemento che precipita insieme alla qualità dellaria',
+            o: ['il morale', 'la qualità dell’aria', 'la pioggia', 'l’umidità'],
+            a: 1,
+          },
+          {
+            q: 'chi era il signore del fantabosco nella melevisione',
+            o: ['lupo lucho', 'gatta sibilla', 'togno cartone', 'fata lina'],
+            a: 2,
+          },
+          {
+            q: 'a cosa allude la frase mondo tuttosotto e sottosopra',
+            o: ['a un vecchio luna park abbandonato', 'alla discarica nascosta sotto la città', 'alla dimensione parallela di temptation island', 'alla rete della metropolitana milanese'],
+            a: 1,
+          },
+          {
+            q: 'quale metallo pesante è tra i più tossici se presente nei rifiuti industriali',
+            o: ['ferro', 'mercurio', 'alluminio', 'zinco'],
+            a: 1,
+          },
+          {
+            q: 'nel manifesto si parla di esalazioni che covano nelle viscere di una palude. come potremmo chiamare quel gas',
+            o: ['metano selvatico', 'anidride paludica', 'gas radon', 'soffio del fognone'],
+            a: 3,
+          },
+        ];
+
+        function respond(isCorrect, answer) {
+          const ans = [
+            ['no', 'sbagliato', 'no sbagliato', 'non è così'],
+            ['si', 'esatto', 'si esatto', 'si, giusto'],
+          ];
+          const choice = Math.floor(Math.random() * ans[+isCorrect].length);
+          let before = '',
+            after = '';
+          if (Math.random() > 0.5) {
+            if (isCorrect) {
+              Math.random() > 0.5 ? (before = answer + ' ') : (after = '. ' + answer);
+            } else {
+              before = answer + ' ';
+            }
+          }
+          return before + ans[+isCorrect][choice] + after;
+        }
+
+        function speak() {
+          if (synth.speaking) {
+            return;
+          }
+
+          const utterThis = new SpeechSynthesisUtterance(qa[counter].q);
+          utterThis.voice = ioana;
+
+          utterThis.onend = function () {
+            playBtn.removeAttribute('disabled');
+            ansBtns.forEach((btn) => {
+              btn.removeAttribute('disabled');
+            });
+          };
+
+          utterThis.onerror = function (e) {
+            if (e.error === 'interrupted' || e.error === 'canceled') {
+              return;
+            }
+            playBtn.removeAttribute('disabled');
+          };
+
+          playBtn.setAttribute('disabled', '');
+
+          utterThis.pitch = 0.7;
+          utterThis.rate = 0.7;
+          synth.speak(utterThis);
+        }
+
+        function init() {
+          synth = window.speechSynthesis;
+
+          if (synth === undefined || synth.getVoices().length === 0) {
+            if (attempts-- > 0) {
+              setTimeout(init, 500);
+            }
+            return;
+          }
+
+          const voices = synth.getVoices();
+          for (const voice of voices) {
+            if (voice.name.toLowerCase() === 'ioana') {
+              ioana = voice;
+              break;
+            }
+          }
+
+          for (let i = qa.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [qa[i], qa[j]] = [qa[j], qa[i]];
+          }
+
+          ansBtns = document.querySelectorAll('.quiz .ans-btn');
+          ansBtns.forEach((btn) => {
+            btn.textContent = qa[counter].o[parseInt(btn.getAttribute('data-ans'), 10)];
+
+            btn.addEventListener('click', function () {
+              playBtn.setAttribute('disabled', '');
+              ansBtns.forEach((btn) => {
+                btn.setAttribute('disabled', '');
+              });
+
+              const ans = parseInt(this.getAttribute('data-ans'), 10);
+              let res = '';
+
+              if (ans === qa[counter].a) {
+                this.style.backgroundColor = 'green';
+                res = respond(true, qa[counter].o[ans]);
+              } else {
+                this.style.backgroundColor = 'red';
+                res = respond(false, qa[counter].o[ans]);
+              }
+
+              const utterThis = new SpeechSynthesisUtterance(res);
+              utterThis.voice = ioana;
+              utterThis.pitch = 0.7;
+              utterThis.rate = 0.7;
+
+              utterThis.onend = function () {
+                counter++;
+                if (counter >= qa.length) {
+                  counter = 0;
+                }
+                ansBtns.forEach((btn) => {
+                  btn.style.backgroundColor = '';
+                  btn.setAttribute('disabled', '');
+                  btn.textContent = qa[counter].o[parseInt(btn.getAttribute('data-ans'), 10)];
+                });
+                speak();
+              };
+
+              if (synth.speaking) {
+                synth.cancel();
+              }
+              setTimeout(() => {
+                synth.speak(utterThis);
+              }, 100);
+            });
+          });
+
+          playBtn = document.querySelector('.quiz .play-btn');
+          playBtn.addEventListener('click', speak);
+
+          playBtn.removeAttribute('disabled');
+        }
+
+        setTimeout(init, 100);
+      });
     </script>
   </body>
 </html>
