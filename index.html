@@ -58,11 +58,18 @@
         box-sizing: border-box;
       }
       body {
-        background: #fbd934;
-        background: #fcf324;
-        color: #da2846;
-        color: #fd82ca;
+        --yellow: #fcf324;
+        --pink: #fd82ca;
+        /* background: #fbd934;
+        color: #da2846; */
+        background: var(--yellow);
+        color: var(--pink);
         font-family: 'Comic Relief', fantasy, cursive, sans-serif;
+        max-width: 2560px;
+        margin: 0 auto;
+      }
+      main {
+        position: relative;
       }
       img,
       iframe {
@@ -82,6 +89,8 @@
         position: sticky;
         bottom: 0;
         pointer-events: none;
+        -webkit-user-select: none;
+        user-select: none;
       }
       .hidden {
         display: none;
@@ -148,14 +157,17 @@
       .quoterrafogna {
         position: absolute;
         pointer-events: none;
-        width: 80%;
-        transform: translate(20%, 200px);
+        width: 20%;
+        transform: translate(50%, 200px) scale(4.5, 0.7);
+        transform-origin: top left;
+        line-height: 1.7;
         text-shadow: 5px 0px 10px #00ff21;
         word-break: break-word;
         mix-blend-mode: difference;
         animation: swag-rnd ease-in-out infinite;
         animation-duration: 50s;
         animation-delay: 0s;
+        font-size: clamp(32px, calc(6.8vw - 3px), 56px);
       }
       .quiz button {
         -webkit-appearance: none;
@@ -204,6 +216,38 @@
       }
       iframe[src*='www.youtube'] {
         aspect-ratio: 16 / 9;
+      }
+      footer #casella {
+        background: var(--yellow);
+        padding: 2px;
+        pointer-events: auto;
+        -webkit-user-select: text;
+        user-select: text;
+      }
+      footer button#copymail {
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: inherit;
+        font-weight: 700;
+        font-size: 24px;
+        vertical-align: sub;
+        pointer-events: auto;
+        cursor: pointer;
+      }
+      footer button#copymail:hover {
+        transform: scale(1.2);
+      }
+      footer button#copymail:active {
+        transform: scale(0.9);
+      }
+      footer .scrivici {
+        display: inline-block;
+      }
+      footer .copied {
+        font-size: 20px;
+        line-height: 1;
       }
 
       @keyframes blink-rnd {
@@ -262,7 +306,7 @@
         }
       }
 
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 500px) {
         h1 {
           font-size: 7vw;
         }
@@ -336,8 +380,8 @@
       </masonry-layout>
       <div class="flex-center px-md pb-md">
         <div class="grid">
-          <iframe src="https://suno.com/embed/23319230-a575-4edf-abe5-7954e06bd8aa" width="760" height="240"><a href="https://suno.com/song/23319230-a575-4edf-abe5-7954e06bd8aa">Inno country del TERRAFOGNA senti qua 🤠</a></iframe>
-          <iframe src="https://suno.com/embed/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283" width="760" height="240"><a href="https://suno.com/song/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283">Inno pop del TERRAFOGNA senti qui 🍿</a></iframe>
+          <iframe src="https://suno.com/embed/23319230-a575-4edf-abe5-7954e06bd8aa" width="760" height="240" title="Inno country del TERRAFOGNA"><a href="https://suno.com/song/23319230-a575-4edf-abe5-7954e06bd8aa">Inno country del TERRAFOGNA senti qua 🤠</a></iframe>
+          <iframe src="https://suno.com/embed/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283" width="760" height="240" title="Inno pop del TERRAFOGNA"><a href="https://suno.com/song/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283">Inno pop del TERRAFOGNA senti qui 🍿</a></iframe>
         </div>
       </div>
       <div class="quoterrafogna text-fogna text-bold">
@@ -368,6 +412,9 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868704/e44fb53649ec53c0d4122ef3e816b837_cwywfn.jpg" alt="" width="320" height="226" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868703/delfini_gaslighting_rvlxf4.jpg" alt="" width="736" height="724" loading="lazy" />
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fBiuZnAY590?si=kGE2jXeqAxy5wqhQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
+        <ig-reel ig-id="DD9LzDxgL5m"></ig-reel>
       </masonry-layout>
       <div class="flex-center px-md py-lg">
         <div class="quiz grid pb-md text-fogna text-bold">
@@ -409,9 +456,6 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/1cadb67dae9615ba46309ca7a1e12925_i9w9du.jpg" alt="" width="1200" height="1800" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9b2f416bb6f57a5b87a9d42bd3e9c6dc_xonam5.jpg" alt="" width="400" height="520" loading="lazy" />
         <ig-reel ig-id="DI9goVqgoR5"></ig-reel>
-        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
-        <ig-reel ig-id="DD9LzDxgL5m"></ig-reel>
       </masonry-layout>
       <div class="quoterrafogna text-fogna text-bold">
         <p>
@@ -460,17 +504,22 @@
         <ig-reel ig-id="DN0p-Ai3tsw"></ig-reel>
         <ig-reel ig-id="DM5jD51OPvb"></ig-reel>
         <ig-reel ig-id="DM7qyaGxDmj"></ig-reel>
+      </masonry-layout>
+      <div class="quoterrafogna text-fogna text-bold">
+        <p>Per fognatura (più formalmente sistema di drenaggio urbano o volgarmente chiavica) si intende il complesso di canalizzazioni, generalmente sotterranee, per raccogliere e smaltire lontano da insediamenti civili e/o produttivi le acque superficiali (meteoriche, di lavaggio, ecc.) e quelle reflue provenienti dalle attività umane in generale. Le canalizzazioni, in generale, funzionano a pelo libero.</p>
+      </div>
+      <masonry-layout class="px-md">
         <ig-reel ig-id="DF0F_kzNRmu"></ig-reel>
         <ig-reel ig-id="DJHTZkpIQ2c"></ig-reel>
         <ig-reel ig-id="C9p5RvZuRvN"></ig-reel>
         <ig-reel ig-id="C5f5DhHp-ot"></ig-reel>
       </masonry-layout>
-      <div class="quoterrafogna text-fogna text-bold">
-        <p>Per fognatura (più formalmente sistema di drenaggio urbano o volgarmente chiavica) si intende il complesso di canalizzazioni, generalmente sotterranee, per raccogliere e smaltire lontano da insediamenti civili e/o produttivi le acque superficiali (meteoriche, di lavaggio, ecc.) e quelle reflue provenienti dalle attività umane in generale. Le canalizzazioni, in generale, funzionano a pelo libero.</p>
-      </div>
-      <div class="grid grid-2"></div>
     </main>
-    <footer class="px-md pb-md">Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa</footer>
+    <footer class="px-md pb-md">
+      Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa. Perciò scrivici! scrivici!! scrivici. Alla casella postale<br />
+      <div class="scrivici"><button type="button" id="copymail">⧉</button><span class="copied hidden"> copito!</span> <span id="casella">terrafogna@gmail.com</span></div>
+      raccontaci le tue voglie
+    </footer>
     <script>
       class IgReel extends HTMLElement {
         constructor() {
@@ -757,6 +806,28 @@
         }
 
         setTimeout(init, 100);
+
+        /*_*^*_*^*_*^*_*/
+
+        let copyTimeout = null;
+        document.getElementById('copymail').addEventListener('click', async function () {
+          if (copyTimeout !== null) return;
+          const copied = document.querySelector('footer .copied');
+
+          if (copied.classList.contains('hidden')) {
+            try {
+              await navigator.clipboard.writeText(document.getElementById('casella').textContent);
+              copied.classList.remove('hidden');
+            } catch (err) {
+              console.error('Failed to copied: ', err);
+            }
+          }
+
+          copyTimeout = setTimeout(() => {
+            copied.classList.add('hidden');
+            copyTimeout = null;
+          }, 2000);
+        });
       });
     </script>
   </body>
