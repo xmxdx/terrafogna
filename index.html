@@ -82,9 +82,6 @@
         color: inherit;
         text-decoration: none;
       }
-      h1 {
-        font-size: 5vw;
-      }
       footer {
         position: sticky;
         bottom: 0;
@@ -108,6 +105,9 @@
       .py-lg {
         padding-top: 48px;
         padding-bottom: 48px;
+      }
+      .text-title {
+        font-size: 5vw;
       }
       .text-bold {
         font-weight: 700;
@@ -138,7 +138,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .blink-children > * {
-        animation: blink-rnd step-start infinite;
+        /* animation: blink-rnd step-start infinite; */
         animation-duration: var(--dur);
         animation-delay: var(--dly);
       }
@@ -164,10 +164,29 @@
         text-shadow: 5px 0px 10px #00ff21;
         word-break: break-word;
         mix-blend-mode: difference;
-        animation: swag-rnd ease-in-out infinite;
+        /* animation: swag-rnd ease-in-out infinite; */
         animation-duration: 50s;
         animation-delay: 0s;
         font-size: clamp(32px, calc(6.8vw - 3px), 56px);
+      }
+      .artist .name {
+        position: relative;
+        margin-top: 96px;
+        background: var(--pink);
+        /* max-width: 340px; */
+      }
+      .artist .name img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* z-index: -1; */
+      }
+      .artist .name h2 {
+        font-size: 96px;
+        word-break: break-all;
+        margin: 0;
+        mix-blend-mode: color-dodge;
+        color: #ff00b5;
       }
       .quiz button {
         -webkit-appearance: none;
@@ -241,13 +260,14 @@
       }
       footer .scrivici {
         display: inline-block;
+        max-width: 85%;
       }
       footer .copied {
         font-size: 20px;
         line-height: 1;
       }
 
-      @keyframes blink-rnd {
+      /* @keyframes blink-rnd {
         0%,
         16%,
         23%,
@@ -301,7 +321,7 @@
         95% {
           text-shadow: 5px 0px 10px #b0ff00;
         }
-      }
+      } */
 
       @media (hover: hover) {
         .nomi .nome:hover + .box {
@@ -313,9 +333,6 @@
       }
 
       @media screen and (max-width: 500px) {
-        h1 {
-          font-size: 7vw;
-        }
         .p-md {
           padding: 12px;
         }
@@ -333,6 +350,9 @@
         .grid {
           gap: 12px;
         }
+        .text-title {
+          font-size: 7vw;
+        }
         .text-md {
           font-size: 1.5rem;
         }
@@ -349,7 +369,7 @@
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0837a29ad012d73a25cef1a9/script.js"></script>
   <body>
     <header class="flex-center">
-      <h1 class="blink-children p-md hidden">
+      <h1 class="blink-children text-title p-md hidden">
         <span style="--dly: -5.2s; --dur: 19.9s">T</span>
         <span style="--dly: -3.3s; --dur: 16.5s">E</span>
         <span style="--dly: -6.3s; --dur: 15.7s">R</span>
@@ -384,48 +404,115 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1758148378/IMG_0140_kwn5ow.jpg" alt="locanda terrafogna" width="1080" height="1528" loading="lazy" />
       </masonry-layout>
       <div class="grid p-md text-md">
-        <h1>SARA FUMATORI</h1>
-        <p>
-          Esponente di spicco del partito Anti Power Point e redattrice del periodico occasionale Tutto Oggi, manifesta sin da giovane una spiccata passione per la musica (non ricambiata). Dopo una sfavillante carriera nella predizione del meteo, intraprende la strada in discesa verso il mixing, prediligendo ritmi opachi e sonorità impertinenti.<br />
-          Ogni ultima domenica del mese e in numerosi altri appuntamenti è parte del progetto collettivo, performativo e sonoro Armonika, sotto le mentite spoglie di Federica Amoruso, alter ego di fantasia.
-        </p>
-        <h1>VERLAZO</h1>
-        <p>Verlazo, pseudonimo di Chiara Verzola, è un’artista multimediale. Si occupa di Teatro e Performing Arts. Approda alla composizione musicale nel 2020. Nel 2025 il suo album, "Barbaro", trova la luce grazie al supporto di Ipologica, Label romana di matrice elettronica-techno. Costruisce la performance “Gamelan” di cui cura regia, suono e video . Verlazo si muove rozzamente nei meandri del pensiero concettuale e lo esprime in una lingua essenziale, immersa in melodie pop e accattivanti. Nei suoi brani parla di società dell’immagine, sistemi di potere, questioni identitarie e problematiche relative al complesso mondo dell’arte. Dal pop all’electro, Verlazo si spinge verso confini non ancora azzardati, giocando con la voce, la musica e il teatro</p>
-        <h1>LUKA X BEATRYCE</h1>
-        <p>Ah, ok, fammi spiegare meglio, eh! La battuta doveva essere che Luka e Beatryce, questi due DJ, iniziano a mixare in un parco giochi, con suoni balordi, ritmi folli e una combinazione di Zucchini d'Oro. Tutto il parco si mette a ballare, sembra che succeda qualcosa di strano e fuori di testa. E poi, all'improvviso, taaaaac, spariscono! Ecco il colpo di scena: taaaaac! La parte divertente dovrebbe essere proprio nell’assurdità della cosa: non sanno neanche cosa suonano e invece taaaaac, scompaiono senza lasciare la traccia! Capito? Un po' come dire che la loro musica è talmente fetente da farli sparire nel nulla…! Un mix di Renato Puzzetta, insomma!</p>
-        <h1>SAPORE</h1>
-        <p>Sapore nutre i palati servendo del groove punk nervoso e “shaking”, affettato sottile sottile da tagli dub. La creatura esiste dal 2023, vive a Jesi AN. Il primo album TIGRI CONTRO ALIENI uscirà in ottobre per Strane Dizioni, Brutta Botta e Wallace Records, registrato da Manuele Marani, prodotto da Manuel Volpe e con la partecipazione di Charlie Rowell (Crocodiles, Crush of Souls), illustrato da Marco Quadri. Maddalena: Voce, percussioni Alessio: basso, effetti percussioni Pietro: batteria</p>
-        <h1>ZOETROPE X GLITTER</h1>
-        <p>fateci sapere</p>
-        <h1>POSSO ROLARE</h1>
-        <p>In quella stanza così stranamente arredata, un uomo sta seduto su una poltrona zoppicante: è di statura alta, slanciata, dalla muscolatura potente, dai lineamenti energici, maschi, fieri e d’una bellezza strana. Lunghi capelli gli cadono sugli omeri: una barba nerissima gli incornicia il volto leggermente abbronzato. Ha la fronte ampia, ombreggiata da due stupende sopracciglia dall’ardita arcata, una bocca piccola che mostra dei denti acuminati come quelli delle fiere e scintillanti come perle; due occhi nerissimi, d’un fulgore che affascina, che brucia, che fa chinare qualsiasi altro sguardo.</p>
-        <h1>DJ-SAT BRUCOMELA</h1>
-        <p>vedrete</p>
-        <h1>PORCINI</h1>
-        <p>Porcini è un’entità sonora che si dispiega attraverso corpi, artefatti, architetture e risonanze emotive. Insieme a alleati occasionali, il novizio, il factotum e il compositore si ritrovano regolarmente in luoghi peculiari per allestire performance ambigue-per pubblici ambigui. Abbracciando l’ottimismo tragico e il pessimismo estatico, creano un archivio mensile di registrazioni domestiche. Suonano dal vivo quando è stagione.</p>
-        <h1>DAVIDINO X IL FROYD</h1>
-        <p>Andrea Frosi, in arte Froyd, è un musicista milanese con influenze rock, blues e R&B. Riflessivo ed irriverente, propone concerti in cui i testi intensi e provocatori sono sdrammatizzati da arrangiamenti ritmati e orecchiabili, creando un contrasto tra storie, personaggi e musica. Tuttavia, questa volta......</p>
-        <h1>TULPESS X UGO GATTINI</h1>
-        <p>Lectio magistralis: sul rapporto tra insetti e dispetti. Insieme analizzeremo anatomia e psicologia di scarabeceri, tenebrionidi e cavallettere, riservandoci un approfondimento, ricco di linfografiche, sulla fauna batterica. Attraverseremo, esplorando e sporulando, "Biorama", il sussidiario illustrato di biologia che da qualche mese sta infestando le case degli italiani.</p>
-        <h1>IGNAZIO</h1>
-        <p>facci sapere anche te</p>
-        <h1>L'ANTENNISTA</h1>
-        <p>
-          Come un pipistrello, L'Antennista si aggira rimbalzando suoni e informazioni.<br />
-          Veste antenne che costruisce su se stesso rispetto al contesto in cui si muove.<br />
-          È un rabdomante emozionale alla ricerca di frequenze, ultrasensibile alle<br />
-          onde elettromagnetiche, agli ultrasuoni, alla luce, ai sentimenti e paranoie.
-        </p>
-        <h1>FOGNATURE PALLOTTA</h1>
-        <p>women nomen</p>
-        <h1>LE SOLEIL</h1>
-        <p>LE SOLEIL, entità editrice nomade, presenta ASSO NELLA MANICA, il laboratorio di creazione di una fanzine collettiva che indaga i misteri delle profondità delle tasche. Dalle 16.00 alle 19.00 del fuso orario milanese, LE SOLEIL chiederà ai partecipanti della prima e ultima edizione del primo Terrafogna di scannerizzare gli oggetti nascosti nelle loro tasche. Per par condicio, valgono anche le borse. L’oggetto misterioso migliore, decretato da giuria impopolare, vincerà una copia stampata come si deve della fanzine collettiva. Gli altri godranno di una versione digitale economica e a basso impatto ambientale.</p>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573617/sarafumatori_vdcbq0.jpg" alt="sarafumatory" width="1125" height="1209" loading="lazy" />
+            <h2 class="text-title">SARA FUMATORI</h2>
+          </div>
+          <p>
+            Esponente di spicco del partito Anti Power Point e redattrice del periodico occasionale Tutto Oggi, manifesta sin da giovane una spiccata passione per la musica (non ricambiata). Dopo una sfavillante carriera nella predizione del meteo, intraprende la strada in discesa verso il mixing, prediligendo ritmi opachi e sonorità impertinenti.<br />
+            Ogni ultima domenica del mese e in numerosi altri appuntamenti è parte del progetto collettivo, performativo e sonoro Armonika, sotto le mentite spoglie di Federica Amoruso, alter ego di fantasia.
+          </p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573616/verlazo_mrklzl.jpg" alt="verlazo" width="1066" height="1600" loading="lazy" />
+            <h2 class="text-title">VERLAZO</h2>
+          </div>
+          <p>Verlazo, pseudonimo di Chiara Verzola, è un’artista multimediale. Si occupa di Teatro e Performing Arts. Approda alla composizione musicale nel 2020. Nel 2025 il suo album, "Barbaro", trova la luce grazie al supporto di Ipologica, Label romana di matrice elettronica-techno. Costruisce la performance “Gamelan” di cui cura regia, suono e video . Verlazo si muove rozzamente nei meandri del pensiero concettuale e lo esprime in una lingua essenziale, immersa in melodie pop e accattivanti. Nei suoi brani parla di società dell’immagine, sistemi di potere, questioni identitarie e problematiche relative al complesso mondo dell’arte. Dal pop all’electro, Verlazo si spinge verso confini non ancora azzardati, giocando con la voce, la musica e il teatro</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573616/md7awyw0nn9zsr_oqnrvi.jpg" alt="lukabeatryce" width="768" height="768" loading="lazy" />
+            <h2 class="text-title">LUKA X BEATRYCE</h2>
+          </div>
+          <p>Ah, ok, fammi spiegare meglio, eh! La battuta doveva essere che Luka e Beatryce, questi due DJ, iniziano a mixare in un parco giochi, con suoni balordi, ritmi folli e una combinazione di Zucchini d'Oro. Tutto il parco si mette a ballare, sembra che succeda qualcosa di strano e fuori di testa. E poi, all'improvviso, taaaaac, spariscono! Ecco il colpo di scena: taaaaac! La parte divertente dovrebbe essere proprio nell’assurdità della cosa: non sanno neanche cosa suonano e invece taaaaac, scompaiono senza lasciare la traccia! Capito? Un po' come dire che la loro musica è talmente fetente da farli sparire nel nulla…! Un mix di Renato Puzzetta, insomma!</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573616/sapore_ftegpo.jpg" alt="sapore" width="1032" height="688" loading="lazy" />
+            <h2 class="text-title">SAPORE</h2>
+          </div>
+          <p>Sapore nutre i palati servendo del groove punk nervoso e “shaking”, affettato sottile sottile da tagli dub. La creatura esiste dal 2023, vive a Jesi AN. Il primo album TIGRI CONTRO ALIENI uscirà in ottobre per Strane Dizioni, Brutta Botta e Wallace Records, registrato da Manuele Marani, prodotto da Manuel Volpe e con la partecipazione di Charlie Rowell (Crocodiles, Crush of Souls), illustrato da Marco Quadri. Maddalena: Voce, percussioni Alessio: basso, effetti percussioni Pietro: batteria</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573621/zoetropeglitter_grtkk1.jpg" alt="zoeglitter" width="946" height="1246" loading="lazy" />
+            <h2 class="text-title">ZOETROPE X GLITTER</h2>
+          </div>
+          <p>performance sonora</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573620/Whats_mwjrmm.jpg" alt="possorolare" width="960" height="1280" loading="lazy" />
+            <h2 class="text-title">POSSO ROLARE</h2>
+          </div>
+          <p>In quella stanza così stranamente arredata, un uomo sta seduto su una poltrona zoppicante: è di statura alta, slanciata, dalla muscolatura potente, dai lineamenti energici, maschi, fieri e d’una bellezza strana. Lunghi capelli gli cadono sugli omeri: una barba nerissima gli incornicia il volto leggermente abbronzato. Ha la fronte ampia, ombreggiata da due stupende sopracciglia dall’ardita arcata, una bocca piccola che mostra dei denti acuminati come quelli delle fiere e scintillanti come perle; due occhi nerissimi, d’un fulgore che affascina, che brucia, che fa chinare qualsiasi altro sguardo.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759742906/mgexftkrtikj0l_qfiooi.jpg" alt="crazywormdjsat" width="768" height="768" loading="lazy" />
+            <h2 class="text-title">DJ-SAT BRUCOMELA</h2>
+          </div>
+          <p>da vedere</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573616/Porcini_arhur6.jpg" alt="porcini" width="1010" height="1346" loading="lazy" />
+            <h2 class="text-title">PORCINI</h2>
+          </div>
+          <p>Porcini è un’entità sonora che si dispiega attraverso corpi, artefatti, architetture e risonanze emotive. Insieme a alleati occasionali, il novizio, il factotum e il compositore si ritrovano regolarmente in luoghi peculiari per allestire performance ambigue-per pubblici ambigui. Abbracciando l’ottimismo tragico e il pessimismo estatico, creano un archivio mensile di registrazioni domestiche. Suonano dal vivo quando è stagione.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <h2 class="text-title">DAVIDINO X IL FROYD</h2>
+          </div>
+          <p>Andrea Frosi, in arte Froyd, è un musicista milanese con influenze rock, blues e R&B. Riflessivo ed irriverente, propone concerti in cui i testi intensi e provocatori sono sdrammatizzati da arrangiamenti ritmati e orecchiabili, creando un contrasto tra storie, personaggi e musica. Tuttavia, questa volta......</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <h2 class="text-title">TULPESS X UGO GATTINI</h2>
+          </div>
+          <p>Lectio magistralis: sul rapporto tra insetti e dispetti. Insieme analizzeremo anatomia e psicologia di scarabeceri, tenebrionidi e cavallettere, riservandoci un approfondimento, ricco di linfografiche, sulla fauna batterica. Attraverseremo, esplorando e sporulando, "Biorama", il sussidiario illustrato di biologia che da qualche mese sta infestando le case degli italiani.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <h2 class="text-title">IGNAZIO</h2>
+          </div>
+          <p>poesie</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573620/Antennista_kq7ud4.jpg" alt="antennista" width="891" height="1047" loading="lazy" />
+            <h2 class="text-title">L'ANTENNISTA</h2>
+          </div>
+          <p>
+            Come un pipistrello, L'Antennista si aggira rimbalzando suoni e informazioni.<br />
+            Veste antenne che costruisce su se stesso rispetto al contesto in cui si muove.<br />
+            È un rabdomante emozionale alla ricerca di frequenze, ultrasensibile alle<br />
+            onde elettromagnetiche, agli ultrasuoni, alla luce, ai sentimenti e paranoie.
+          </p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <h2 class="text-title">FOGNATURE PALLOTTA</h2>
+          </div>
+          <p>laboratorio ortolano musicale</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1759573616/fotuzzagiovanni_smtdqx.jpg" alt="lesoleil" width="1067" height="1600" loading="lazy" />
+            <h2 class="text-title">LE SOLEIL</h2>
+          </div>
+          <p>LE SOLEIL, entità editrice nomade, presenta ASSO NELLA MANICA, il laboratorio di creazione di una fanzine collettiva che indaga i misteri delle profondità delle tasche. Dalle 16.00 alle 19.00 del fuso orario milanese, LE SOLEIL chiederà ai partecipanti della prima e ultima edizione del primo Terrafogna di scannerizzare gli oggetti nascosti nelle loro tasche. Per par condicio, valgono anche le borse. L’oggetto misterioso migliore, decretato da giuria impopolare, vincerà una copia stampata come si deve della fanzine collettiva. Gli altri godranno di una versione digitale economica e a basso impatto ambientale.</p>
+        </div>
       </div>
       <masonry-layout class="px-md">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-13-13-05-22_w7ubu9.jpg" alt="cargo" width="1200" height="1600" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772877/PHOTO-2025-09-12-20-47-44_urb8tt.jpg" alt="dixies" width="1152" height="2048" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-12-18-41-05_iqsvnw.jpg" alt="locanda" width="1536" height="2048" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757772876/PHOTO-2025-09-09-18-07-49_icese7.jpg" alt="salone" width="828" height="1069" loading="lazy" />
+        <ig-reel ig-id="DK10aHIIGg2"></ig-reel>
       </masonry-layout>
       <div class="flex-center px-md pb-md">
         <div class="grid">
@@ -463,7 +550,6 @@
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fBiuZnAY590?si=kGE2jXeqAxy5wqhQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/v1757868692/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
-        <ig-reel ig-id="DD9LzDxgL5m"></ig-reel>
       </masonry-layout>
       <div class="flex-center px-md py-lg">
         <div class="quiz grid pb-md text-fogna text-bold">
@@ -590,9 +676,8 @@
       </masonry-layout>
     </main>
     <footer class="px-md pb-md">
-      Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa. Perciò scrivici! scrivici!! scrivici. Alla casella postale<br />
-      <div class="scrivici"><button type="button" id="copymail">⧉</button><span class="copied hidden"> copito!</span> <span id="casella">terrafogna@gmail.com</span></div>
-      raccontaci le tue voglie
+      Terrafogna e la tua famiglia è un po' di tempo per fare la spesa e fare la spesa e fare la spesa. Perciò scrivici! scrivici!! scrivici alla casella postale<br />
+      <div class="scrivici"><button type="button" id="copymail">⧉</button><span class="copied hidden"> copito!</span> <span id="casella">terrafogna@gmail.com</span> raccontaci le tue voglie</div>
     </footer>
     <script>
       class IgReel extends HTMLElement {
