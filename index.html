@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="utf-8" />
@@ -36,7 +36,9 @@
         font-style: normal;
         font-display: block;
         font-weight: 400;
-        src: url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff) format('woff');
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff2) format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-400-normal.woff) format('woff');
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
@@ -46,7 +48,9 @@
         font-style: normal;
         font-display: block;
         font-weight: 700;
-        src: url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff) format('woff');
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff2) format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/comic-relief@latest/latin-700-normal.woff) format('woff');
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
     </style>
@@ -680,9 +684,81 @@
       <div class="scrivici"><button type="button" id="copymail">⧉</button><span class="copied hidden"> copito!</span> <span id="casella">terrafogna@gmail.com</span> raccontaci le tue voglie</div>
     </footer>
     <script>
+      const IgReelManager = {
+        scriptLoaded: false,
+        scriptLoading: false,
+        pendingEmbeds: new Set(),
+        _processTimeout: null,
+        lazyObserver: null,
+
+        async loadScript() {
+          if (this.scriptLoaded) return Promise.resolve();
+          if (this.scriptLoading) {
+            return new Promise((resolve) => {
+              const check = setInterval(() => {
+                if (this.scriptLoaded) {
+                  clearInterval(check);
+                  resolve();
+                }
+              }, 50);
+            });
+          }
+
+          this.scriptLoading = true;
+          return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.instagram.com/embed.js';
+            script.onload = () => {
+              this.scriptLoaded = true;
+              this.scriptLoading = false;
+              resolve();
+            };
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+        },
+
+        scheduleProcess(element) {
+          this.pendingEmbeds.add(element);
+
+          clearTimeout(this._processTimeout);
+          this._processTimeout = setTimeout(() => {
+            this.processEmbeds();
+          }, 100);
+        },
+
+        processEmbeds() {
+          if (window.instgrm && window.instgrm.Embeds && this.pendingEmbeds.size > 0) {
+            window.instgrm.Embeds.process();
+            this.pendingEmbeds.clear();
+          }
+        },
+
+        // Shared observer for lazy loading
+        getObserver() {
+          if (!this.lazyObserver) {
+            this.lazyObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    const element = entry.target;
+                    element.loadEmbed();
+                    this.lazyObserver.unobserve(element);
+                  }
+                });
+              },
+              { rootMargin: '50px' },
+            );
+          }
+          return this.lazyObserver;
+        },
+      };
+
       class IgReel extends HTMLElement {
         constructor() {
           super();
+          this.loaded = false;
         }
 
         static get observedAttributes() {
@@ -691,18 +767,34 @@
 
         connectedCallback() {
           this.render();
-          this.loadInstagramScript();
+
+          // Use the shared observer
+          IgReelManager.getObserver().observe(this);
+        }
+
+        disconnectedCallback() {
+          IgReelManager.pendingEmbeds.delete(this);
+          IgReelManager.getObserver().unobserve(this);
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
           if (oldValue !== newValue) {
             this.render();
+            if (this.loaded && IgReelManager.scriptLoaded) {
+              IgReelManager.scheduleProcess(this);
+            }
           }
+        }
+
+        async loadEmbed() {
+          if (this.loaded) return;
+          this.loaded = true;
+          await IgReelManager.loadScript();
+          IgReelManager.scheduleProcess(this);
         }
 
         render() {
           const igId = this.getAttribute('ig-id');
-
           if (!igId) {
             this.innerHTML = '<div style="color: red; padding: 10px;">No video id</div>';
             return;
@@ -757,23 +849,6 @@
   </blockquote>
 </div>
 `;
-
-          setTimeout(() => {
-            if (window.instgrm && window.instgrm.Embeds) {
-              window.instgrm.Embeds.process();
-            }
-          }, 100);
-        }
-
-        loadInstagramScript() {
-          if (window.instgrm || document.querySelector('script[src*="instagram.com/embed.js"]')) {
-            return;
-          }
-
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.instagram.com/embed.js';
-          document.head.appendChild(script);
         }
       }
 
