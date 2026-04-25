@@ -57,15 +57,13 @@
     <style>
       html,
       body {
-        /* height: 100%; */
         margin: 0;
         box-sizing: border-box;
       }
       body {
         --yellow: #fcf324;
         --pink: #fd82ca;
-        /* background: #fbd934;
-        color: #da2846; */
+        --green: #0eff00;
         background: var(--yellow);
         color: var(--pink);
         font-family: 'Comic Relief', fantasy, cursive, sans-serif;
@@ -74,6 +72,15 @@
       }
       main {
         position: relative;
+        transform: matrix(var(--bsx, 1), 0, 0, var(--bsy, 1), 0, var(--by, 0));
+        transform-origin: var(--orig, initial);
+      }
+      header > img {
+        transform: matrix(var(--hscx, 1), var(--hsky, 0), var(--hskx, 0), var(--hscy, 1), var(--hx, 0), var(--hy, 0));
+      }
+      main,
+      header > img {
+        transition: transform 200ms linear;
       }
       img,
       iframe {
@@ -141,10 +148,10 @@
       .grid-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .blink-children > * {
-        /* animation: blink-rnd step-start infinite; */
-        animation-duration: var(--dur);
-        animation-delay: var(--dly);
+      .tana-bg {
+        background: repeating-conic-gradient(var(--green) 2deg 8deg, transparent 8deg 14deg), radial-gradient(var(--green) 20%, transparent 60%);
+        -webkit-mask-image: radial-gradient(#000 60%, transparent 60%);
+        mask-image: radial-gradient(#000 60%, transparent 60%);
       }
       .tana {
         text-align: center;
@@ -168,7 +175,6 @@
         text-shadow: 5px 0px 10px #00ff21;
         word-break: break-word;
         mix-blend-mode: difference;
-        /* animation: swag-rnd ease-in-out infinite; */
         animation-duration: 50s;
         animation-delay: 0s;
         font-size: clamp(32px, calc(6.8vw - 3px), 56px);
@@ -178,13 +184,11 @@
         position: relative;
         margin-top: 96px;
         background: var(--pink);
-        /* max-width: 340px; */
       }
       .artist .name img {
         position: absolute;
         width: 100%;
         height: 100%;
-        /* z-index: -1; */
       }
       .artist .name h2 {
         font-size: 96px;
@@ -245,65 +249,14 @@
         line-height: 1;
       }
 
-      /* @keyframes blink-rnd {
-        0%,
-        16%,
-        23%,
-        31%,
-        37%,
-        46%,
-        58%,
-        64%,
-        79%,
-        93%,
-        100% {
-          opacity: 0;
-        }
-        8%,
-        21%,
-        25%,
-        35%,
-        43%,
-        52%,
-        60%,
-        72%,
-        89%,
-        95% {
-          opacity: 1;
-        }
-      }
-
-      @keyframes swag-rnd {
-        0%,
-        16%,
-        23%,
-        31%,
-        37%,
-        46%,
-        58%,
-        64%,
-        79%,
-        93%,
-        100% {
-          text-shadow: 5px 0px 10px #00ff85;
-        }
-        8%,
-        21%,
-        25%,
-        35%,
-        43%,
-        52%,
-        60%,
-        72%,
-        89%,
-        95% {
-          text-shadow: 5px 0px 10px #b0ff00;
-        }
-      } */
-
       @media (hover: hover) {
-        .nomi .nome:hover + .box {
-          display: block;
+        .ppt {
+          position: fixed;
+          width: 100%;
+          height: 1px;
+          background: black;
+          z-index: 1000;
+          pointer-events: none;
         }
         footer button#copymail:hover {
           transform: scale(1.2);
@@ -446,23 +399,13 @@
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0837a29ad012d73a25cef1a9/script.js"></script>
   </head>
   <body>
+    <div class="ppt"></div>
     <header class="flex-center">
-      <h1 class="blink-children text-title p-md hidden">
-        <span style="--dly: -5.2s; --dur: 19.9s">T</span>
-        <span style="--dly: -3.3s; --dur: 16.5s">E</span>
-        <span style="--dly: -6.3s; --dur: 15.7s">R</span>
-        <span style="--dly: -9.4s; --dur: 16.1s">R</span>
-        <span style="--dly: -7.5s; --dur: 15.6s">A</span>
-        <span style="--dly: -4.7s; --dur: 15.9s">F</span>
-        <span style="--dly: -9.6s; --dur: 16.6s">O</span>
-        <span style="--dly: -3.8s; --dur: 17.1s">G</span>
-        <span style="--dly: -9.2s; --dur: 15.4s">N</span>
-        <span style="--dly: -5.9s; --dur: 16.7s">A</span>
-      </h1>
+      <h1 class="text-title p-md hidden">TERRAFOGNA</h1>
       <img class="p-md" src="https://res.cloudinary.com/dqpbhbdcf/image/upload/TERRAFOGNA_1200_lf8wnp.png" alt="header terrafogna" width="1200" height="211" />
     </header>
     <main>
-      <div class="flex-center p-md">
+      <div class="tana-bg flex-center p-md">
         <a class="tana" href="https://t.me/terrafogna" target="_blank" rel="noopener noreferrer">
           <svg width="1000" height="1000" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="currentColor" stroke-width="40" fill="none">
@@ -473,7 +416,16 @@
           <span>Pigia qui ed entra nella tana</span>
         </a>
       </div>
-
+      <div class="p-md text-md">
+        <p>
+          Ragaaaaaaaaaaaaaaaaa🐭aaaaaaa🐀aaaaa🐁aaaaaaaaaa🕊️aaaa🐀aaaaaaaa🐦aaaaaa<br />
+          🤦🏾‍♂️💢 🤦‍♂️💢 🤦🏽‍♀️💢 🤦🏿‍♂️💢 🤦🏼‍♂️💢 🤦🏻‍♀️💢 🤦🏿‍♀️💢 🤦💢 🤦🏼‍♀️💢 🤦🏾💢 🤦🏻💢 🤦🏿💢 🤦‍♀️💢 🤦🏽💢 🤦🏽‍♂️💢 🤦🏼💢 🤦🏾‍♀️💢 🤦🏻‍♂️💢<br />
+          Se non ve lo volete perdere vi tocca venireeeeeeeeeeee🚁eeee🚑eeeeeee🚜eeeeee🚤eeee🚀eeeeeee🛩️eeeeee🚠eeeeeeeee🛵eeee🚗eeeeeeee⛵️eeee🛴eeeeee🏊‍♀️eeeeeeeee⛷️eeeee🏄‍♀️eeee🚣‍♀️eeeeeeee🚴‍♀️eeeee⛷️eeeeeee🏃‍♀️eeeee🏃‍♂️‍➡️eeeeeeee🏇eeeeeeeeeeeeeeeeeeee
+        </p>
+        <div class="flex-center">
+          <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/terzafogna2_sjhtsr.jpg" alt="terzafogna2" width="1200" height="1600" loading="lazy" />
+        </div>
+      </div>
       <div class="p-md text-md">
         <p>Questa c'è piaciuta moooltoo! 👇👇 Voremo fare altre 👇👇</p>
         <div class="flex-center">
@@ -599,16 +551,16 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/PHOTO-2025-09-09-18-07-49_icese7.jpg" alt="salone" width="828" height="1069" loading="lazy" />
         <ig-reel ig-id="DK10aHIIGg2"></ig-reel>
       </masonry-layout>
-      <div class="flex-center px-md pb-md">
+      <!-- <div class="flex-center px-md pb-md">
         <div class="grid">
           <iframe src="https://suno.com/embed/23319230-a575-4edf-abe5-7954e06bd8aa" width="760" height="240" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"><a href="https://suno.com/song/23319230-a575-4edf-abe5-7954e06bd8aa">Inno country del TERRAFOGNA senti qua 🤠</a></iframe>
           <iframe src="https://suno.com/embed/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283" width="760" height="240" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"><a href="https://suno.com/song/5e87cb7e-7d6f-4b90-a8e8-07b9a69ea283">Inno pop del TERRAFOGNA senti qui 🍿</a></iframe>
         </div>
-      </div>
+      </div> -->
       <div class="quoterrafogna text-fogna text-bold">
         <p>L’albero azzurro è in decomposizione, il fantabosco è sempre stato lí, dove giace il cimitero dei rifiuti tossici della Bovisa, solo che ancora non ne eravamo a conoscenza. La pressione dell’aria sale e la qualità precipita, il Seveso è perennemente in piena, oltre la soglia di allerta, come i nostri umori. Un mondo tuttosotto e sottosopra, uno festa mutante selvatica, esalazioni che covano. nelle viscere di una palude e si dirigono verso la città…</p>
       </div>
-      <masonry-layout class="px-md">
+      <masonry-layout class="px-md" maxcolwidth="700">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/kawaii_cute_pitbull_aesthetic_pink_dale_tih3p9.jpg" alt="kawaii" width="736" height="736" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/Screenshot_2025-09-13_alle_15.12.12_ggsjls.jpg" alt="" width="1284" height="1146" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/vibing_in_this_economy_dyqlf0.jpg" alt="" width="473" height="472" loading="lazy" />
@@ -632,7 +584,7 @@
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/e9eb4d6e7027dee42481ad27f7be3ed7_k2ezcr.jpg" alt="" width="625" height="990" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/e44fb53649ec53c0d4122ef3e816b837_cwywfn.jpg" alt="" width="320" height="226" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/delfini_gaslighting_rvlxf4.jpg" alt="" width="736" height="724" loading="lazy" />
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fBiuZnAY590?si=kGE2jXeqAxy5wqhQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fBiuZnAY590" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/9d5b47f317a3d060a9a30cd78f62a816_zzxsxl.jpg" alt="" width="360" height="480" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/3f256c7645b609e7f1614add5fa77b37_etj34z.jpg" alt="" width="805" height="619" loading="lazy" />
       </masonry-layout>
@@ -649,7 +601,7 @@
       <div class="quoterrafogna text-fogna text-bold">
         <p>Se hai assunto regolarmente le generose razioni di inedia che offre la città in cui sopravvivi, se le acque nere che tracimano dalle condutture della pubblica morale hanno incidentalmente battezzato il tuo capo può capitarti di attraversare una metamoforsi dolorosa: c’è chi si trasforma in un supereroe, chi in un supererrore. E se occupassimo quella sottile differenza? Nuovi ed ultimi fedeli alla linea locale ma fuori posto in città</p>
       </div>
-      <masonry-layout class="px-md">
+      <masonry-layout class="px-md" maxcolwidth="700">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/cea64f8329c519658b6731c2a7532901_v0jrjb.jpg" alt="" width="455" height="700" loading="lazy" />
         <ig-reel ig-id="DKegbtxt9EG"></ig-reel>
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/cavallo_wow_u9wnyt.jpg" alt="" width="717" height="714" loading="lazy" />
@@ -683,7 +635,7 @@
           Altre versioni suggeriscono che i coccodrilli, nelle fogne, vivendo in completa assenza di luce solare, si sarebbero abituati ed adattati a queste condizioni, modificando le squame e diventando ciechi e albini; gli occhi sarebbero divenuti rossi.[7] Il supposto albinismo comporterebbe un disagio per i coccodrilli, che non potrebbero recarsi al di fuori delle fogne poiché, come tutti gli animali albini, sarebbero molto vulnerabili ai danni causati dalla luce solare, soprattutto i piccoli. Coloro che credono a questa leggenda affermano invece che i presunti coccodrilli albini non uscirebbero mai dalle fogne proprio perché consci delle loro caratteristiche. Non ci sono mai stati, tuttavia, avvistamenti di coccodrilli albini a New York.[8]
         </p>
       </div>
-      <masonry-layout class="px-md">
+      <masonry-layout class="px-md" maxcolwidth="700">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/4c3fac6b2caaed277043bdc0c3a8d899_luhyyl.jpg" alt="" width="460" height="622" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/PHOTO-2025-09-05-10-10-01_oupb3q.jpg" alt="" width="1600" height="1200" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/PHOTO-2025-08-20-11-49-06_xtk3vt.jpg" alt="" width="1200" height="1600" loading="lazy" />
@@ -728,7 +680,7 @@
       <div class="quoterrafogna text-fogna text-bold">
         <p>Per fognatura (più formalmente sistema di drenaggio urbano o volgarmente chiavica) si intende il complesso di canalizzazioni, generalmente sotterranee, per raccogliere e smaltire lontano da insediamenti civili e/o produttivi le acque superficiali (meteoriche, di lavaggio, ecc.) e quelle reflue provenienti dalle attività umane in generale. Le canalizzazioni, in generale, funzionano a pelo libero.</p>
       </div>
-      <masonry-layout class="px-md">
+      <masonry-layout class="px-md" maxcolwidth="700">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/ebeff01b14026c7285d46a960f97372b_q9d0jp.jpg" alt="" width="735" height="628" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/90ca58328131fda2c462644fbbd2edfa_juyrvo.jpg" alt="" width="655" height="1137" loading="lazy" />
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/3881b9ccbc404d6d76c0cabfd87b6113_qwx6mp.jpg" alt="" width="644" height="1144" loading="lazy" />
@@ -978,6 +930,112 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        // From: @mohayonao/perlin-noise (https://github.com/mohayonao/perlin-noise)
+        class PerlinNoise {
+          constructor(rand = Math.random) {
+            let perm = new Int8Array(257);
+
+            for (let i = 0; i < 256; i++) {
+              perm[i] = i & 1 ? 1 : -1;
+            }
+
+            for (let i = 0; i < 256; i++) {
+              let j = (rand() * 4294967296) & 255;
+
+              [perm[i], perm[j]] = [perm[j], perm[i]];
+            }
+            perm[256] = perm[0];
+
+            function noise1d(x) {
+              let x0 = x | 0;
+              let x1 = x - x0;
+              let xi = x0 & 255;
+              let fx = (3 - 2 * x1) * x1 * x1;
+              let a = x1 * perm[xi];
+              let b = (x1 - 1) * perm[xi + 1];
+
+              return a + fx * (b - a);
+            }
+
+            function noise(x, octaves = 4, persistence = 0.5) {
+              let noiseSum = 0;
+              let ampSum = 0;
+              let frequency = 1;
+              let amplitude = 1;
+
+              for (let i = 0; i < octaves; i++) {
+                noiseSum += noise1d(x * frequency) * amplitude;
+                ampSum += amplitude;
+                frequency *= 2;
+                amplitude *= persistence;
+              }
+
+              return noiseSum / ampSum;
+            }
+
+            this.noise = noise;
+          }
+        }
+
+        const bodyNoiseY = new PerlinNoise();
+        const bodyNoiseSx = new PerlinNoise();
+        const bodyNoiseSy = new PerlinNoise();
+        let orig = `center ${window.innerHeight * 0.5}px`;
+        const main = document.querySelector('body > main');
+        const headerNoiseX = new PerlinNoise();
+        const headerNoiseY = new PerlinNoise();
+        const headerNoiseScX = new PerlinNoise();
+        const headerNoiseScY = new PerlinNoise();
+        const headerNoiseSkX = new PerlinNoise();
+        const headerNoiseSkY = new PerlinNoise();
+        const header = document.querySelector('body > header');
+        const headerImg = header.querySelector('img');
+        let headerInView = true;
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            headerInView = entry.isIntersecting;
+          },
+          { rootMargin: '200px' },
+        );
+        observer.observe(header);
+
+        window.addEventListener('scroll', () => {
+          const hh = 0; //window.innerHeight * 0.5;
+          const st = window.scrollY || document.documentElement.scrollTop;
+          orig = `center ${st + hh}px`;
+          main.style.setProperty('--orig', orig);
+        });
+
+        const f = (n) => {
+          return n.toFixed(3);
+        };
+
+        const noises = (time) => {
+          const t = time * 0.0001;
+          const by = bodyNoiseY.noise(t * 0.5, 2, 0.25) * 100;
+          const bsx = bodyNoiseSx.noise(t * 0.5, 2, 0.25) * 0.05 + 1;
+          const bsy = bodyNoiseSy.noise(t * 0.2, 2, 0.25) * 0.5 + 1;
+          main.style.cssText = `--bsx: ${f(bsx)}; --bsy: ${f(bsy)}; --by: ${f(by)}; --orig: ${orig};`;
+          if (headerInView) {
+            const hx = headerNoiseX.noise(t, 1, 0) * 500;
+            const hy = headerNoiseY.noise(t, 1, 0) * 500;
+            const hscx = headerNoiseScX.noise(t, 1, 0) + 1;
+            const hscy = headerNoiseScY.noise(t, 1, 0) + 1;
+            const hskx = headerNoiseSkX.noise(t, 1, 0);
+            const hsky = headerNoiseSkY.noise(t, 1, 0);
+            headerImg.style.cssText = `--hscx: ${f(hscx)}; --hsky: ${f(hsky)}; --hskx: ${f(hskx)}; --hscy: ${f(hscy)}; --hx: ${f(hx)}; --hy: ${f(hy)};`;
+          }
+        };
+        const toCb = () => {
+          requestAnimationFrame(noises);
+          setTimeout(toCb, 200);
+        };
+        requestAnimationFrame(toCb);
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
         let attempts = 5,
           counter = 0,
           synth,
@@ -1163,7 +1221,7 @@
 
         setTimeout(init, 100);
 
-        /*_*^*_*^*_*^*_*/
+        //_m_^_u_^_m_//
 
         let copyTimeout = null;
         document.getElementById('copymail').addEventListener('click', async function () {
