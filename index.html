@@ -70,16 +70,29 @@
         max-width: 2560px;
         margin: 0 auto;
       }
+      header {
+        aspect-ratio: 4;
+      }
       main {
         position: relative;
+        word-break: break-word;
         transform: matrix(var(--bsx, 1), 0, 0, var(--bsy, 1), 0, var(--by, 0));
         transform-origin: var(--orig, initial);
       }
-      header > img {
+      .trifogno {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .trifogno img {
         transform: matrix(var(--hscx, 1), var(--hsky, 0), var(--hskx, 0), var(--hscy, 1), var(--hx, 0), var(--hy, 0));
       }
       main,
-      header > img {
+      .trifogno img {
         transition: transform 200ms linear;
       }
       img,
@@ -402,7 +415,11 @@
     <div class="ppt"></div>
     <header class="flex-center">
       <h1 class="text-title p-md hidden">TERRAFOGNA</h1>
-      <img class="p-md" src="https://res.cloudinary.com/dqpbhbdcf/image/upload/TERRAFOGNA_1200_lf8wnp.png" alt="header terrafogna" width="1200" height="211" />
+      <div class="trifogno">
+        <div>
+          <img class="p-md" src="https://res.cloudinary.com/dqpbhbdcf/image/upload/TERRAFOGNA_1200_lf8wnp.png" alt="header terrafogna" width="1200" height="211" />
+        </div>
+      </div>
     </header>
     <main>
       <div class="tana-bg flex-center p-md">
@@ -423,7 +440,100 @@
           Se non ve lo volete perdere vi tocca venireeeeeeeeeeee🚁eeee🚑eeeeeee🚜eeeeee🚤eeee🚀eeeeeee🛩️eeeeee🚠eeeeeeeee🛵eeee🚗eeeeeeee⛵️eeee🛴eeeeee🏊‍♀️eeeeeeeee⛷️eeeee🏄‍♀️eeee🚣‍♀️eeeeeeee🚴‍♀️eeeee⛷️eeeeeee🏃‍♀️eeeee🏃‍♂️‍➡️eeeeeeee🏇eeeeeeeeeeeeeeeeeeee
         </p>
         <div class="flex-center">
-          <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/terzafogna2_sjhtsr.jpg" alt="terzafogna2" width="1200" height="1600" loading="lazy" />
+          <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/Terrafogna2_m0yzcc.jpg" alt="terzafogna2" width="1080" height="1350" loading="lazy" />
+        </div>
+      </div>
+      <div class="grid p-md text-md">
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/sweetness-hard-candy-food-bonbon-gummi-candy-candy-1614026-pxhere.com_cmworx.jpg" alt="SERT" width="800" height="533" loading="lazy" />
+            <h2 class="text-title">DJ SERT</h2>
+          </div>
+          <p>Dj serT Iamo</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/ottico-34_tprcl8.jpg" alt="twoonky" width="800" height="600" loading="lazy" />
+            <h2 class="text-title">TWOONKY</h2>
+          </div>
+          <p>
+            I fratelli Michele e Simone Bornati, co-fondatori dello Spettro Club di Brescia, portano avanti il progetto Twoonky dal 2015. Drummachine polverose, suoni acustici, oceani di rumore instabili, sintetizzatori ipnotici, sassofoni spezzati, collage sperimentali e un pensiero schizzoide, con ritmi strutturati sulla musica post-punk industriale, nelle stravaganze della no-wave, del krautrock e delle follie della cultura elettronica contemporanea.<br />
+            Hanno pubblicato numerosi album su Villa Recordings (etichetta bresciana legata allo Spettroclub), due LP, "DEZZO" e "OTTICO", su Macadam Mambo, e sono stati inclusi in molte compilation della scena club sperimentale europea.<br />
+            Hanno girato tutta Europa, esibendosi nei club più underground e nei festival della scena DIY .<br />
+            Funky surreale, atmosfere rock spaziali, elettrizzate da sintetizzatori cosmici e beat infrarossi.
+          </p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/Credits_IMPUBBLICABILE_c2s4cg.jpg" alt="rokeya" width="800" height="533" loading="lazy" />
+            <h2 class="text-title">ROKEYA</h2>
+          </div>
+          <p>
+            Rokeya è un’artista londinese attiva come performer, selector e producer.<br />
+            La sua ricerca si muove su traiettorie sonore ibride, dove musica, ritualità e immaginari culturali si contaminano senza confini.<br />
+            Nel live costruisce un linguaggio che definisce “electro-ritual-cosmic dance”: un flusso sonoro e fisico che attraversa tribalismo, spiritualità e tensioni contemporanee.<br />
+            Si esibisce in solo, dove il corpo diventa impulso primario, e insieme ai suoi Diableros, con cui spinge il progetto verso territori più esoterici e psichedelici.<br />
+            È fondatrice e direttrice artistica del progetto Extra Mundus, nato nel 2022 con l’obiettivo di promuovere sonorità post-globali e percorsi di sperimentazione tra cultura elettronica, identità marginali e geopolitiche sonore.<br />
+            Collabora con etichette indipendenti e collettivi internazionali, oltre a realtà come L-Acoustic e ABLETON.<br />
+            Ha fondato MUJER LUCHADORA, nato come mixtape ogni 8 marzo, divenuto nel tempo uno spazio vivo tra talk, mostre ed esibizioni, dove negli anni sono state selezionate più di 200 artiste provenienti da 43 paesi: nessuna barriera stilistica musicale, ma lo stesso empowerment.<br />
+            Per Terrafogna, Rokeya porterà un live inedito: un rituale collettivo, fisico e liberatorio, dove abbandonare pesantezze vincolanti e ballare come se nessuno ci stesse giudicando e guardando.<br />
+            LINKS<br />
+            BC> <a href="https://rokeya.bandcamp.com/music" target="_blank" rel="noopener noreferrer">https://rokeya.bandcamp.com/music</a><br />
+            IG> <a href="https://www.instagram.com/rokeyamusic/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/rokeyamusic/</a><br />
+            SC> <a href="https://soundcloud.com/rokeyamusic" target="_blank" rel="noopener noreferrer">https://soundcloud.com/rokeyamusic</a><br />
+            FB> <a href="https://www.facebook.com/rokeyamusic" target="_blank" rel="noopener noreferrer">https://www.facebook.com/rokeyamusic</a><br />
+            YT> <a href="https://www.youtube.com/channel/UC87_rIQZACx2KOOA1Dn5t6w" target="_blank" rel="noopener noreferrer">https://www.youtube.com/channel/UC87_rIQZACx2KOOA1Dn5t6w</a><br />
+            MXC> <a href="https://www.mixcloud.com/rokeya/" target="_blank" rel="noopener noreferrer">https://www.mixcloud.com/rokeya/</a><br />
+          </p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_14.46.46_1_j1fv0b.jpg" alt="SERtogni" width="800" height="999" loading="lazy" />
+            <h2 class="text-title">SER TOGNI</h2>
+          </div>
+          <p>SER fka Stefano Togni è un fumettista bergamasco, ingegnere di fanzine e teorico del tramezzino. Gli piacciono scatole, schemi, fantasticherie contorte, sperimentazioni low-budget, interfacce e dadi. I suoi fumetti e le sue storie sembrano in gran parte ispirate a queste cose.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/DSC00609_fhauzv.jpg" alt="antennistaBASILE" width="800" height="533" loading="lazy" />
+            <h2 class="text-title">BASILE ANATOL DINBERGS & L'ANTENNISTA</h2>
+          </div>
+          <p>
+            QUEL CÂBLE COUPER<br />
+            Un progetto di Basile Dinbergs e Lorenzo Lungh<br /><br />
+            Questa performance porta in superficie sentimenti e ritualità che appartengono ad entrambi gli artisti: l’Antennista e Basile Anatol Dinbergs. In comune vi è l'attenzione ai codici della società contemporanea, come la creazione di oggetti tecnologici e plusvalore e di come sabotarli; l'attenzione allo sguardo e all'interpretazione di un personaggio, ma anche alla messa in scena comica e allo stesso tempo drammatico sensibile della contemporaneità schizzofrenica.
+          </p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_14.45.55_oh0cgg.jpg" alt="gattini" width="800" height="1422" loading="lazy" />
+            <h2 class="text-title">UGO GATTINI</h2>
+          </div>
+          <p>ugo gattini in carne e ossa</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_21.28.05_sjlgrk.jpg" alt="tulpess" width="495" height="660" loading="lazy" />
+            <h2 class="text-title">TULPESS</h2>
+          </div>
+          <p>Alice Fiorelli nasce nel 1993 a Morbegno, in Valtellina; ora a Milano vive e disegna, scrive e insegna ai piccoli. Con la sua casa editrice immaginaria “tulpress” autoproduce e pubblica libri di domande, creature e mucillagini che si esprimono in illustrazioni devianti e scritture sensibili. Nel 2025 è uscito il suo libro “Biorama” per una casa editrice vera. Dal 2021 porta avanti “sensiteeeve”, un progetto di upcycle sperimentale che mira alla trasformazione di vecchi indumenti in pezzi unici poetici, attraverso un approccio spontaneo e giocoso. Si interessa di ecologia, parole, stati di grazie e strutture frattali del paesaggio. Sa contare fino a cento.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/Rollei100_Le_Soleil06_iozj5c.jpg" alt="lesolei" width="800" height="799" loading="lazy" />
+            <h2 class="text-title">LE SOLEIL</h2>
+          </div>
+          <p>LE SOLEIL è l'entità editrice nomade che stampa riviste, fotografie, libri d’arte nelle giornate soleggiate collegando un pannello solare a un device di stampa. LE SOLEIL realizza pubblicazioni su richiesta, certificando il momento in cui sono state stampate grazie a un timbro che ne indica il giorno e l'orario. Oltre a collaborare con artisti, illustratori e scrittori, promuove un modello di editoria comunitaria e aperta, coinvolgendo in strada differenti comunità di cittadini nella creazione dei contenuti editoriali con un intervento diretto sulla stampante.</p>
+        </div>
+        <div class="artist">
+          <div class="name">
+            <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_22.36.17_wlupxa.jpg" alt="mape" width="800" height="762" loading="lazy" />
+            <h2 class="text-title">MAPE</h2>
+          </div>
+          <p>
+            se mape esistesse apparterrebbe più alla fogna che alla terra. ma basta filosofia spicciola... no, mape esiste ed è solo un abisso assoluto come tutti i comuni mortali. ma da questo silenzio cosmico assordante raccapricciante terribile smisurato ogni tanto compare una piccola stella che balla balla balla a ritmo di free jazz e brucia brucia brucia divorata dai colori della follia e in un attimo commissario le giuro che io c’entro niente con quello che è successo l’altra sera io non c’ero è stata la stella le dico commissà… la stella! è stato bob le dico che è stato booooooooob!<br />
+            sipario.
+          </p>
         </div>
       </div>
       <div class="p-md text-md">
@@ -432,6 +542,16 @@
           <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/terarfango_bk1yzr.jpg" alt="complianoterra" width="1709" height="2048" loading="lazy" />
         </div>
       </div>
+      <masonry-layout class="px-md" maxcolwidth="700">
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_ynsng1.jpg" alt="andrewFROMtheHAMMER" width="1600" height="1059" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_6_uufhpl.jpg" alt="andrewFROMtheHAMMER" width="1059" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_7_rb6wvi.jpg" alt="andrewFROMtheHAMMER" width="1059" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_5_uivhyq.jpg" alt="andrewFROMtheHAMMER" width="1600" height="1059" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_1_sjux9p.jpg" alt="andrewFROMtheHAMMER" width="1059" height="1600" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_4_mj9psh.jpg" alt="andrewFROMtheHAMMER" width="1600" height="1064" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_3_b51rrs.jpg" alt="andrewFROMtheHAMMER" width="1600" height="1059" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/WhatsApp_Image_2026-05-05_at_12.43.03_2_muynvo.jpg" alt="andrewFROMtheHAMMER" width="1600" height="1059" loading="lazy" />
+      </masonry-layout>
       <div class="flex-center p-md">
         <img src="https://res.cloudinary.com/dqpbhbdcf/image/upload/nomii_dhhbaa.jpg" alt="locanda terrafogna" width="1080" height="1350" loading="lazy" />
       </div>
@@ -988,7 +1108,7 @@
         const headerNoiseScY = new PerlinNoise();
         const headerNoiseSkX = new PerlinNoise();
         const headerNoiseSkY = new PerlinNoise();
-        const header = document.querySelector('body > header');
+        const header = document.querySelector('header .trifogno');
         const headerImg = header.querySelector('img');
         let headerInView = true;
         const observer = new IntersectionObserver(
